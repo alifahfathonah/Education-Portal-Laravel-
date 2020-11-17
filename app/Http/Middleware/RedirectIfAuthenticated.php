@@ -20,7 +20,7 @@ class RedirectIfAuthenticated
         switch ($guard){
             case 'admin':
                 if (Auth::guard($guard)->check()) {
-                    return redirect('/backend/home');
+                    return redirect('/admin/home');
                 }
             break;
             default:
@@ -29,7 +29,6 @@ class RedirectIfAuthenticated
                 }
                 break;
         }
-
         return $next($request);
     }
 }

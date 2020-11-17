@@ -61,7 +61,6 @@
                                     @if(Route::has('login'))
                                         @auth
                                             <img style="width: 30px;height: 30px;margin-right: 10px;" src="{{asset('frontend/asset/images/avator.png')}}" alt="{{auth()->user()->first_name}}">
-
                                             <div class="btn-group">
                                                 <a type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     {{ucfirst(auth()->user()->first_name).' '.ucfirst(auth()->user()->last_name)}}
@@ -149,9 +148,9 @@
                                         <li>
                                             <a href="#">Skill Development</a>
                                             <ul class="dropdown-menu-item">
-                                                <li><a href="skill.html">Soft Skill</a></li>
-                                                <li><a href="skill.html">Academic Skill</a></li>
-                                                <li><a href="skill.html">Professional Skill</a></li>
+                                                <li><a href="{{route('user.skill.softskill')}}">Soft Skill</a></li>
+                                                <li><a href="{{route('user.skill.academicskill')}}">Academic Skill</a></li>
+                                                <li><a href="{{route('user.skill.professionalskill')}}">Professional Skill</a></li>
                                                 <li>
                                                     <a href="blog.html">Tips and Tricks</a>
                                                     <ul class="dropdown-menu-item">

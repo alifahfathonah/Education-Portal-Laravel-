@@ -12,9 +12,7 @@ class Admin extends Authenticatable
 {
     use Notifiable,SoftDeletes;
 
-    public function roles(){
-        return $this->belongsToMany(Role::class,'admin_role');
-    }
+
 
     public function getNameAttribute($value)
     {

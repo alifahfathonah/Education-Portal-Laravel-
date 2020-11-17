@@ -128,9 +128,9 @@
                                         <li>
                                             <a href="#">Skill Development</a>
                                             <ul class="dropdown-menu-item">
-                                                <li><a href="skill.html">Soft Skill</a></li>
-                                                <li><a href="skill.html">Academic Skill</a></li>
-                                                <li><a href="skill.html">Professional Skill</a></li>
+                                                <li><a href="{{route('user.skill.softskill')}}">Soft Skill</a></li>
+                                                <li><a href="{{route('user.skill.academicskill')}}">Academic Skill</a></li>
+                                                <li><a href="{{route('user.skill.professionalskill')}}">Professional Skill</a></li>
                                                 <li>
                                                     <a href="blog.html">Tips and Tricks</a>
                                                     <ul class="dropdown-menu-item">

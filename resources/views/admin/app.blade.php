@@ -1,4 +1,7 @@
-
+@php
+    $currentRouteName = Route::currentRouteName();
+    $prefix = Request::route()->getPrefix();
+@endphp
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -27,13 +30,15 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="{{asset('backend/assets/plugins/nprogress/nprogress.js')}}"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    @yield('css')
 </head>
 
 
 <body class="header-fixed sidebar-fixed sidebar-dark header-light" id="body">
 
 <script>
-    NProgress.configure({ showSpinner: true });
+    NProgress.configure({ showSpinner: false });
     NProgress.start();
 </script>
 
@@ -61,69 +66,8 @@
   ——— LEFT SIDEBAR WITH FOOTER
   =====================================
 -->
-    <aside class="left-sidebar bg-sidebar">
-        <div id="sidebar" class="sidebar sidebar-with-footer">
-            <!-- Aplication Brand -->
-            <div class="app-brand">
-                <a href="#" title="Sleek Dashboard">
-                    <svg
-                        class="brand-icon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        preserveAspectRatio="xMidYMid"
-                        width="30"
-                        height="33"
-                        viewBox="0 0 30 33"
-                    >
-                        <g fill="none" fill-rule="evenodd">
-                            <path
-                                class="logo-fill-blue"
-                                fill="#7DBCFF"
-                                d="M0 4v25l8 4V0zM22 4v25l8 4V0z"
-                            />
-                            <path class="logo-fill-white" fill="#FFF" d="M11 4v25l8 4V0z" />
-                        </g>
-                    </svg>
-                    <span class="brand-name text-truncate">School of Engineers</span>
-                </a>
-            </div>
-            <!-- begin sidebar scrollbar -->
-            <div class="sidebar-scrollbar">
-                <!-- sidebar menu -->
-                <ul class="nav sidebar-inner" id="sidebar-menu">
 
-                    <li  class="has-sub active expand" >
-                        <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard"
-                           aria-expanded="false" aria-controls="dashboard">
-                            <i class="mdi mdi-view-dashboard-outline"></i>
-                            <span class="nav-text">Dashboard</span> <b class="caret"></b>
-                        </a>
-                        <ul  class="collapse show"  id="dashboard"
-                             data-parent="#sidebar-menu">
-                            <div class="sub-menu">
-
-                                <li  class="active" >
-                                    <a class="sidenav-item-link" href="index.html">
-                                        <span class="nav-text">Ecommerce</span>
-
-                                    </a>
-                                </li>
-
-                                <li >
-                                    <a class="sidenav-item-link" href="analytics.html">
-                                        <span class="nav-text">Analytics</span>
-
-                                        <span class="badge badge-success">new</span>
-
-                                    </a>
-                                </li>
-                            </div>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </aside>
-
+    @include('admin.inc.sidebar')
 
     <div class="page-wrapper">
         <!-- Header -->
@@ -153,14 +97,14 @@
                         <li class="dropdown user-menu">
                             <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                                 <img src="{{asset('backend/assets/img/user/user.png')}}" class="user-image" alt="User Image" />
-                                <span class="d-none d-lg-inline-block">{{Auth::user()->name}}</span>
+                                <span class="d-none d-lg-inline-block">{{auth()->user()->name}}</span>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <!-- User image -->
                                 <li class="dropdown-header">
                                     <img src="{{asset('backend/assets/img/user/user.png')}}" class="img-circle" alt="User Image" />
                                     <div class="d-inline-block">
-                                        Abdus Salam <small class="pt-1">iamabdus@gmail.com</small>
+                                        {{auth()->user()->name}} <small class="pt-1">{{auth()->user()->email}}</small>
                                     </div>
                                 </li>
 
@@ -208,18 +152,13 @@
         <footer class="footer mt-auto">
             <div class="copyright bg-white">
                 <p>
-                    &copy; <span id="copy-year">2019</span> Copyright Sleek Dashboard Bootstrap Template by
-                    <a
-                        class="text-primary"
-                        href="http://www.iamabdus.com/"
-                        target="_blank"
-                    >Abdus</a
-                    >.
+                    &copy; <span id="copy-year">{{\Carbon\Carbon::now()->year}}</span> Copyright School of Engineers.
                 </p>
             </div>
 
         </footer>
     </div>
+    @include('sweetalert::alert')
 </div>
 
 <script src="{{asset('backend/assets/plugins/jquery/jquery.min.js')}}"></script>
@@ -232,6 +171,8 @@
 <script src="{{asset('backend/assets/plugins/daterangepicker/daterangepicker.js')}}"></script>
 <script src="{{asset('backend/assets/plugins/toastr/toastr.min.js')}}"></script>
 <script src="{{asset('backend/assets/js/sleek.bundle.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+@yield('js')
 </body>
 
 </html>

@@ -149,9 +149,9 @@
                                         <li>
                                             <a href="#">Skill Development</a>
                                             <ul class="dropdown-menu-item">
-                                                <li><a href="skill.html">Soft Skill</a></li>
-                                                <li><a href="skill.html">Academic Skill</a></li>
-                                                <li><a href="skill.html">Professional Skill</a></li>
+                                                <li><a href="{{route('user.skill.softskill')}}">Soft Skill</a></li>
+                                                <li><a href="{{route('user.skill.academicskill')}}">Academic Skill</a></li>
+                                                <li><a href="{{route('user.skill.professionalskill')}}">Professional Skill</a></li>
                                                 <li>
                                                     <a href="blog.html">Tips and Tricks</a>
                                                     <ul class="dropdown-menu-item">
@@ -322,7 +322,7 @@
         </div><!-- end header-menu-content -->
     </div><!-- end header-menu-fluid -->
 </section><!-- end header-menu-area -->
-
+@include('frontend.inc.breadcrumb')
 @section('main-content')
 @show
 
@@ -492,13 +492,11 @@
         </div>
     </div>
 </section>
-
 <!-- start scroll top -->
 <div id="scroll-top">
     <i class="fa fa-angle-up" title="Go top"></i>
 </div>
 <!-- end scroll top -->
-
 
 <!-- theme js files -->
 <script src="{{asset('frontend/asset/js/jquery-3.4.1.min.js')}}"></script>

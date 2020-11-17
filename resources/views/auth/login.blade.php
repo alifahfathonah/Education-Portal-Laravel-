@@ -41,7 +41,7 @@
                                     <div class="custom-checkbox mb-4">
                                         <input type="checkbox" id="chb1" name="remember" {{old('remember')?'checked':''}}>
                                         <label for="chb1">Remember Me</label>
-                                        <a href="#" class="pass__desc"> Forgot my password?</a>
+                                        <a href="{{route('password.request')}}" class="pass__desc"> Forgot my password?</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-sm-12">
