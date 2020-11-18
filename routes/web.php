@@ -17,11 +17,23 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::namespace('Frontend')->group(function (){
     Route::get('/','HomeController@index')->name('user.home');
 //    Route::get('/information','HomeController@information')->name('user.information');
-    //Skill Retrieve
-    Route::get('/soft-skill','HomeController@softSkill')->name('user.skill.softskill');
-    Route::get('/soft-skill/{slug}','HomeController@softSkillDetails')->name('user.skill.softskill.details');
-    Route::get('/academic-skill','HomeController@academicSkill')->name('user.skill.academicskill');
-    Route::get('/professional-skill','HomeController@professionalSkill')->name('user.skill.professionalskill');
+
+    Route::prefix('skill-development')->group(function (){
+        //Skill Development Retrieve
+        Route::get('/soft-skill','HomeController@softSkill')->name('user.skill.softskill');
+        Route::get('/academic-skill','HomeController@academicSkill')->name('user.skill.academicskill');
+        Route::get('/professional-skill','HomeController@professionalSkill')->name('user.skill.professionalskill');
+        Route::get('/skill-detail/{slug}','HomeController@skillDetails')->name('user.skill.details');
+    });
+
+    Route::prefix('tips-and-tricks')->group(function (){
+        //Tips and Tricks Retrieve
+        Route::get('interview','HomeController@interviewTips')->name('user.tips.interview');
+        Route::get('educational','HomeController@educationalTips')->name('user.tips.educational');
+        Route::get('career-and-planing','HomeController@careerAndPlaningTips')->name('user.tips.career');
+        Route::get('others','HomeController@othersTips')->name('user.tips.others');
+        Route::get('tips-detail/{slug}','HomeController@tipsDetails')->name('user.tips.details');
+    });
 });
 
 
@@ -41,16 +53,28 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('/','HomeController@index')->name('admin.mainpage')->middleware('auth:admin');
     Route::get('/home', 'HomeController@index')->name('admin.home')->middleware('auth:admin');
     //For Skill Development
-    Route::prefix('skill')->group(function (){
+    Route::prefix('skill-development')->group(function (){
         Route::get('index','SkillController@index')->name('admin.skill.index');
         Route::get('create','SkillController@create')->name('admin.skill.create');
         Route::post('store','SkillController@store')->name('admin.skill.store');
         Route::get('delete/{id}','SkillController@delete')->name('admin.skill.delete');
         Route::get('{id}/edit','SkillController@edit')->name('admin.skill.edit');
         Route::put('{id}/update','SkillController@update')->name('admin.skill.update');
-        Route::get('/trash','SkillController@trashIndex')->name('admin.skill.trash.index');
+        Route::get('trash','SkillController@trashIndex')->name('admin.skill.trash.index');
         Route::get('{id}/restore','SkillController@restore')->name('admin.skill.trash.restore');
         Route::get('{id}/forcedelete','SkillController@trashDelete')->name('admin.skill.trash.delete');
+    });
+    //For Tips and Tricks
+    Route::prefix('tips-and-tricks')->group(function (){
+        Route::get('index','TipsController@index')->name('admin.tips.index');
+        Route::get('create','TipsController@create')->name('admin.tips.create');
+        Route::post('store','TipsController@store')->name('admin.tips.store');
+        Route::get('delete/{id}','TipsController@delete')->name('admin.tips.delete');
+        Route::get('{id}/edit','TipsController@edit')->name('admin.tips.edit');
+        Route::put('{id}/update','TipsController@update')->name('admin.tips.update');
+        Route::get('trash','TipsController@trashIndex')->name('admin.tips.trash.index');
+        Route::get('{id}/restore','TipsController@restore')->name('admin.tips.trash.restore');
+        Route::get('{id}/forcedelete','TipsController@trashDelete')->name('admin.tips.trash.delete');
     });
 
     //Admin Login

@@ -153,12 +153,12 @@
                                                 <li><a href="{{route('user.skill.academicskill')}}">Academic Skill</a></li>
                                                 <li><a href="{{route('user.skill.professionalskill')}}">Professional Skill</a></li>
                                                 <li>
-                                                    <a href="blog.html">Tips and Tricks</a>
+                                                    <a href="javascript:void(0)">Tips and Tricks</a>
                                                     <ul class="dropdown-menu-item">
-                                                        <li><a href="interview.html">Interview</a></li>
-                                                        <li><a href="interview.html">Educational</a></li>
-                                                        <li><a href="tips.html">Career and planing</a></li>
-                                                        <li><a href="tips.html">Others</a></li>
+                                                        <li><a href="{{route('user.tips.interview')}}">Interview</a></li>
+                                                        <li><a href="{{route('user.tips.educational')}}">Educational</a></li>
+                                                        <li><a href="{{route('user.tips.career')}}">Career and planing</a></li>
+                                                        <li><a href="{{route('user.tips.others')}}">Others</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>

@@ -154,7 +154,7 @@ class SkillController extends Controller
         @unlink('uploads/skill/main/'.$skill->image);
         @unlink('uploads/skill/thumb/'.$skill->thumb);
         $skill->forceDelete();
-        toast('Skill Permanently successful...!!!','success');
+        toast('Skill Permanently Delete successful...!!!','success');
         return redirect()->back();
     }
 }

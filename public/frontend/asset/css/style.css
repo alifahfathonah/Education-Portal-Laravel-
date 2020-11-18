@@ -9658,7 +9658,9 @@ div#blood_section{
 }
 
 .pagination-wrap {
-    margin-top: 25px
+    margin-top: 25px;
+    justify-content: center;
+    display: flex;
 }
 
 .pagination-wrap .pagination .page-item .page-link {
