@@ -84,6 +84,44 @@
                         </div>
                     </ul>
                 </li>
+                <li>
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#tips"
+                       aria-expanded="false" aria-controls="dashboard">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">Blog</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse @if($prefix === 'admin/blog') show @endif @if($prefix === 'admin/blog/category') show @endif"  id="tips"
+                         data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li class="@if($currentRouteName === 'admin.blog.category.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.blog.category.index')}}">
+                                    <span class="nav-text">Category</span>
+                                </a>
+                            </li>
+                            <li class="@if($currentRouteName === 'admin.blog.category.trash') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.blog.category.trash')}}">
+                                    <span class="nav-text">Category Trash</span>
+                                </a>
+                            </li>
+
+                            <li class="@if($currentRouteName === 'admin.blog.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.blog.index')}}">
+                                    <span class="nav-text">Index</span>
+                                </a>
+                            </li>
+                            <li class="@if($currentRouteName === 'admin.blog.create') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.blog.create')}}">
+                                    <span class="nav-text">Add Blog</span>
+                                </a>
+                            </li>
+                            <li class="@if($currentRouteName === 'admin.blog.trash.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.blog.trash.index')}}">
+                                    <span class="nav-text">Trash</span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

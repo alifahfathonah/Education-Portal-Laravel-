@@ -2,17 +2,17 @@
 @section('main-content')
     <div class="card card-default">
         <div class="card-header card-header-border-bottom d-flex justify-content-between">
-            <h2>Edit Skill</h2>
-            <a href="{{route('admin.skill.index')}}" class="btn btn-outline-primary btn-sm text-uppercase">
-                <i class="fa fa-list"></i> Skill List
+            <h2>Edit Tips and Tricks</h2>
+            <a href="{{route('admin.blog.index')}}" class="btn btn-outline-primary btn-sm text-uppercase">
+                <i class="fa fa-list"></i> Tips List
             </a>
         </div>
         <div class="card-body">
-            <form action="{{route('admin.skill.update',['id'=>$skill->id])}}" method="post" enctype="multipart/form-data">@csrf
+            <form action="{{route('admin.blog.update',['id'=>$blog->id])}}" method="post" enctype="multipart/form-data">@csrf
                 {{method_field('PUT')}}
                 <div class="form-group">
-                    <label for="title">Skill Title :</label>
-                    <textarea class="form-control @error('title') is-invalid @enderror" id="title" name="title"  rows="3">{{$skill->title}}</textarea>
+                    <label for="title">Tips and Tricks Title :</label>
+                    <textarea class="form-control @error('title') is-invalid @enderror" id="title" name="title"  rows="3">{{$blog->title}}</textarea>
                     @error('title')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
 
                 </div>
@@ -20,15 +20,15 @@
                     <label for="category">Select Category :</label>
                     <select class="form-control @error('category') is-invalid @enderror" id="category" name="category">
                         <option value="">Select a Category</option>
-                        <option value="soft skill" @if($skill->category === 'soft skill') selected @endif>{{ucfirst('soft skill')}}</option>
-                        <option value="academic skill" @if($skill->category === 'academic skill') selected @endif>{{ucfirst('academic skill')}}</option>
-                        <option value="professional skill" @if($skill->category === 'professional skill') selected @endif>{{ucfirst('professional skill')}}</option>
+                        @foreach($categories as $category)
+                            <option @if($category->id === $blog->category) selected @endif value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
                     </select>
                     @error('category')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
                 </div>
                 <div class="form-group">
-                    <label style="display: block" for="exampleFormControlFile2">Current Image : <a target="_blank" class="btn btn-warning pull-right" href="{{url('uploads/skill/main/'.$skill->image)}}"><i class="fa fa-eye"></i> View Large Image</a></label>
-                    <img style="max-width: 130px;height: auto;" src="{{url('uploads/skill/thumb/'.$skill->thumb)}}" alt="">
+                    <label style="display: block" for="exampleFormControlFile2">Current Image : <a target="_blank" class="btn btn-warning pull-right" href="{{url('uploads/blog/main/'.$blog->image)}}"><i class="fa fa-eye"></i> View Large Image</a></label>
+                    <img style="max-width: 130px;height: auto;" src="{{url('uploads/blog/thumb/'.$blog->thumb)}}" alt="">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Thumbnail Image :</label>
@@ -37,14 +37,14 @@
                 </div>
                 <div class="form-group">
                     <label for="category">Content :</label>
-                    <textarea name="description" id="description" class="@error('description') is-invalid @enderror">{{$skill->description}}</textarea>
+                    <textarea name="description" id="description" class="@error('description') is-invalid @enderror">{{$blog->description}}</textarea>
                     @error('description')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
                 </div>
                 <div class="form-group">
                     <label for="category">Select Status :</label>
                     <select name="status" class="form-control">
-                        <option @if($skill->status === 1) selected @endif value="1">Active</option>
-                        <option @if($skill->status === 0) selected @endif value="0">Inactive</option>
+                        <option @if($blog->status === 1) selected @endif value="1">Active</option>
+                        <option @if($blog->status === 0) selected @endif value="0">Inactive</option>
                     </select>
                 </div>
                 <button class="btn btn-primary" type="submit">Update</button>

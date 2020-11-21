@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Model\Admin\Admin;
+use App\Model\Admin\Blog;
+use App\Model\Admin\BlogCategory;
 use App\Model\Admin\Skill;
 use App\Model\Admin\Tips;
 
@@ -111,5 +113,22 @@ class HomeController extends Controller
     public function tipsDetails($slug)
     {
         return $slug;
+    }
+
+    public function blog()
+    {
+        $categories = BlogCategory::where('status',1)->orderByDesc('id')->get();
+        $blogs = Blog::where('status',1)->orderByDesc('id')->get();
+        $admins = Admin::all();
+        return view('frontend.blog.blog')
+            ->with([
+                'categories'=>$categories,
+                'blogs'=>$blogs,
+                'admins'=>$admins
+            ]);
+    }
+    public function category($category)
+    {
+        return $category;
     }
 }

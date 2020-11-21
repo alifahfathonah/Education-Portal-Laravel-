@@ -163,7 +163,7 @@
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="blog.html">Blog</a>
+                                            <a href="{{route('user.blog')}}">Blog</a>
                                         </li>
                                         <li>
                                             <a href="">About Us</a>

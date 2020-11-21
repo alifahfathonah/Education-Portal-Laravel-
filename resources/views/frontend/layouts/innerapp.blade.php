@@ -41,7 +41,7 @@
                         <div class="header-widget header-widget1">
                             <ul class="contact-info d-flex align-items-center">
                                 <li><a href="#"><span class="la la-phone"></span> 123-456-789</a> </li>
-                                <li><a href="#"><span class="la la-envelope-o"></span> schoolofengr@gmail.com</a></li>
+                                <li><a href="mailto:schoolofengr@gmail.com"><span class="la la-envelope-o"></span> schoolofengr@gmail.com</a></li>
                             </ul>
                         </div><!-- end header-widget -->
                     </div><!-- end col-lg-6 -->
@@ -61,7 +61,6 @@
                                     @if(Route::has('login'))
                                         @auth
                                             <img style="width: 30px;height: 30px;margin-right: 10px;" src="{{asset('frontend/asset/images/avator.png')}}" alt="{{auth()->user()->first_name}}">
-
                                             <div class="btn-group">
                                                 <a type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     {{ucfirst(auth()->user()->first_name).' '.ucfirst(auth()->user()->last_name)}}
@@ -184,7 +183,7 @@
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="blog.html">Blog</a>
+                                            <a href="{{route('user.blog')}}">Blog</a>
                                         </li>
                                         <li>
                                             <a href="">About Us</a>

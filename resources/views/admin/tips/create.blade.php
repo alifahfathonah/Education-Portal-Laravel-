@@ -43,7 +43,7 @@
                         <option value="0">Inactive</option>
                     </select>
                 </div>
-                <button class="btn btn-primary" type="submit">Submit form</button>
+                <button class="btn btn-primary" type="submit"> <i class="fa fa-save fa-fw"></i>Save</button>
             </form>
         </div>
     </div>
