@@ -107,7 +107,6 @@
                                         {{auth()->user()->name}} <small class="pt-1">{{auth()->user()->email}}</small>
                                     </div>
                                 </li>
-
                                 <li>
                                     <a href="user-profile.html">
                                         <i class="mdi mdi-account"></i> My Profile

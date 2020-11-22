@@ -13559,3 +13559,6 @@ html[dir="rtl"] .github-link svg {
   transform: rotateY(180deg); }
 
 /*# sourceMappingURL=sleek.css.map */
+.form-control.is-invalid{
+    border-color:red!important;
+}

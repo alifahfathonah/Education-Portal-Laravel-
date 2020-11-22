@@ -147,7 +147,6 @@ class SkillController extends Controller
         toast('Skill restore successful...!!!','success');
         return redirect()->back();
     }
-
     public function trashDelete($id)
     {
         $skill = Skill::withTrashed()->where('id',$id)->first();

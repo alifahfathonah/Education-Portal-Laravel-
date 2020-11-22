@@ -11,38 +11,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="407f3d8c-4f46-4f0d-adb9-fca67e672a7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BlogController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Admin/Blog.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Admin/BlogCategory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_21_063319_create_blog_categories_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_21_093946_create_blogs_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/blog/main/Blog_1605956183_Screenshot_5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/blog/main/Blog_1605959066_Screenshot_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/blog/main/Blog_1605961107_125509291_3454229204668344_8886464381994325490_o.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/blog/thumb/Blog_thumb_1605956183_Screenshot_5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/blog/thumb/Blog_thumb_1605959066_Screenshot_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/blog/thumb/Blog_thumb_1605961107_125509291_3454229204668344_8886464381994325490_o.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/blog/category_create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/blog/category_edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/blog/category_index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/blog/category_trash.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/blog/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/blog/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/blog/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/blog/trash.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/blog/blog.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/laravel-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PartnerController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TeamController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TeamPanelNameController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Admin/Partner.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Admin/Team.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Admin/TeamPanelName.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_22_065441_create_partners_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_22_101326_create_team_panel_names_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_22_120558_create_teams_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/partner/main/Partner_main_1606037219_unnamed.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/partner/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/partner/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/partner/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/partner/trash.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/team/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/team/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/team/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/team/team_panel/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/team/team_panel/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/team/team_panel/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/team/team_panel/trash.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/team/trash.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SkillController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SkillController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/backend/assets/css/sleek.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/backend/assets/css/sleek.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/blog/category_create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/blog/category_create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/inc/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/inc/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/skill/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/skill/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/skill/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/skill/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/tips/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/tips/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/tips/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/tips/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/homeapp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/homeapp.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/innerapp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/innerapp.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -228,7 +225,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../soe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/team/team_panel" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -239,17 +236,17 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\blogs\app\Http\Controllers\Admin" />
-      <recent name="C:\xampp\htdocs\blogs\app" />
-      <recent name="C:\xampp\htdocs\blogs\app\Model\User" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Laravel-Blog-with-Admin-Panel\resources\views\admin\team\team_panel" />
       <recent name="C:\xampp\htdocs\blogs\resources\views\admin\users" />
       <recent name="C:\xampp\htdocs\blogs\resources\views\admin\permission" />
       <recent name="C:\xampp\htdocs\blogs\resources\views\admin\role" />
       <recent name="C:\xampp\htdocs\blogs\app\Http\Controllers\Admin\Auth" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\blogs\app\Http\Controllers\Admin" />
+      <recent name="C:\xampp\htdocs\blogs\app" />
+      <recent name="C:\xampp\htdocs\blogs\app\Model\User" />
     </key>
   </component>
   <component name="RunManager">
@@ -330,7 +327,9 @@
       <workItem from="1605590456946" duration="18677000" />
       <workItem from="1605675478608" duration="508000" />
       <workItem from="1605676976914" duration="19734000" />
-      <workItem from="1605935699072" duration="18990000" />
+      <workItem from="1605935699072" duration="19046000" />
+      <workItem from="1606024816015" duration="603000" />
+      <workItem from="1606025748266" duration="16404000" />
     </task>
     <servers />
   </component>
@@ -353,18 +352,18 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="22" key="#Deployment" timestamp="1605952010674">
+    <state x="275" y="22" key="#Deployment" timestamp="1606039389542">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="22" key="#Deployment/0.0.1366.728@0.0.1366.728" timestamp="1605952010674" />
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605958954938">
+    <state x="275" y="22" key="#Deployment/0.0.1366.728@0.0.1366.728" timestamp="1606039389542" />
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606045975720">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1605958954938" />
-    <state x="532" y="274" key="Create Controller" timestamp="1605938235193">
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606045975720" />
+    <state x="532" y="274" key="Create Controller" timestamp="1606039982077">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="532" y="274" key="Create Controller/0.0.1366.728@0.0.1366.728" timestamp="1605938235193" />
+    <state x="532" y="274" key="Create Controller/0.0.1366.728@0.0.1366.728" timestamp="1606039982077" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1605440459589">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -385,9 +384,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1605435792010" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1605957520587">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606045878771">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1605957520587" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606045878771" />
   </component>
 </project>

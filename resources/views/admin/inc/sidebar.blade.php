@@ -2,7 +2,7 @@
     <div id="sidebar" class="sidebar ">
         <!-- Aplication Brand -->
         <div class="app-brand">
-            <a href="#" title="Sleek Dashboard">
+            <a href="{{route('admin.mainpage')}}" title="Sleek Dashboard">
                 <svg
                     class="brand-icon"
                     xmlns="http://www.w3.org/2000/svg"
@@ -85,12 +85,12 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#tips"
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#blog"
                        aria-expanded="false" aria-controls="dashboard">
                         <i class="mdi mdi-view-dashboard-outline"></i>
                         <span class="nav-text">Blog</span> <b class="caret"></b>
                     </a>
-                    <ul  class="collapse @if($prefix === 'admin/blog') show @endif @if($prefix === 'admin/blog/category') show @endif"  id="tips"
+                    <ul  class="collapse @if($prefix === 'admin/blog') show @endif @if($prefix === 'admin/blog/category') show @endif"  id="blog"
                          data-parent="#sidebar-menu">
                         <div class="sub-menu">
                             <li class="@if($currentRouteName === 'admin.blog.category.index') active @endif">
@@ -116,6 +116,60 @@
                             </li>
                             <li class="@if($currentRouteName === 'admin.blog.trash.index') active @endif">
                                 <a class="sidenav-item-link" href="{{route('admin.blog.trash.index')}}">
+                                    <span class="nav-text">Trash</span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+                <li>
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#partner"
+                       aria-expanded="false" aria-controls="dashboard">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">Partner</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse @if($prefix === 'admin/partner') show @endif"  id="partner"
+                         data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li class="@if($currentRouteName === 'admin.partner.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.partner.index')}}">
+                                    <span class="nav-text">Index</span>
+                                </a>
+                            </li>
+                            <li class="@if($currentRouteName === 'admin.partner.create') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.partner.create')}}">
+                                    <span class="nav-text">Add Partner</span>
+                                </a>
+                            </li>
+                            <li class="@if($currentRouteName === 'admin.partner.trash.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.partner.trash.index')}}">
+                                    <span class="nav-text">Trash</span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+                <li>
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#team"
+                       aria-expanded="false" aria-controls="dashboard">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">SOE Team</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse @if($prefix === 'admin/team') show @endif @if($prefix === 'admin/team/panel-name') show @endif"  id="team"
+                         data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li class="@if($currentRouteName === 'admin.team.panel.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.team.panel.index')}}">
+                                    <span class="nav-text">Panel Name</span>
+                                </a>
+                            </li>
+                            <li class="@if($currentRouteName === 'admin.team.panel.trash') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.team.panel.trash')}}">
+                                    <span class="nav-text">Panel Name Trash</span>
+                                </a>
+                            </li>
+                            <li class="@if($currentRouteName === 'admin.partner.trash.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.partner.trash.index')}}">
                                     <span class="nav-text">Trash</span>
                                 </a>
                             </li>

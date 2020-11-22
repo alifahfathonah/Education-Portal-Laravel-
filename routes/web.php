@@ -35,7 +35,7 @@ Route::namespace('Frontend')->group(function (){
 
     });
     Route::get('blog','HomeController@blog')->name('user.blog');
-    Route::get('blog/{category}','HomeController@category')->name('user.blog.category');
+    Route::get('blog/category/{id}','HomeController@category')->name('user.blog.category');
 });
 
 
@@ -91,7 +91,6 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
             Route::get('trash','BlogController@categoryTrash')->name('admin.blog.category.trash');
             Route::get('{id}/restore','BlogController@categoryRestore')->name('admin.blog.category.restore');
             Route::get('{id}/forcedelete','BlogController@categoryForceDelete')->name('admin.blog.category.forcedelete');
-
         });
         //For blog
         Route::get('index','BlogController@index')->name('admin.blog.index');
@@ -104,9 +103,43 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         Route::get('{id}/restore','BlogController@restore')->name('admin.blog.trash.restore');
         Route::get('{id}/forcedelete','BlogController@forceDelete')->name('admin.blog.trash.delete');
     });
-
-
-
+    //For Partner Panel
+    Route::prefix('partner')->group(function (){
+        Route::get('index','PartnerController@index')->name('admin.partner.index');
+        Route::get('create','PartnerController@create')->name('admin.partner.create');
+        Route::post('store','PartnerController@store')->name('admin.partner.store');
+        Route::get('delete/{id}','PartnerController@delete')->name('admin.partner.delete');
+        Route::get('{id}/edit','PartnerController@edit')->name('admin.partner.edit');
+        Route::put('{id}/update','PartnerController@update')->name('admin.partner.update');
+        Route::get('trash','PartnerController@trashIndex')->name('admin.partner.trash.index');
+        Route::get('{id}/restore','PartnerController@restore')->name('admin.partner.trash.restore');
+        Route::get('{id}/forcedelete','PartnerController@forceDelete')->name('admin.partner.trash.delete');
+    });
+    //For SOE Team
+    Route::prefix('team')->group(function (){
+        //For SOE team Panel Name
+        Route::prefix('panel-name')->group(function (){
+            Route::get('index','TeamPanelNameController@index')->name('admin.team.panel.index');
+            Route::get('create','TeamPanelNameController@create')->name('admin.team.panel.create');
+            Route::post('store','TeamPanelNameController@store')->name('admin.team.panel.store');
+            Route::get('delete/{id}','TeamPanelNameController@delete')->name('admin.team.panel.delete');
+            Route::get('{id}/edit','TeamPanelNameController@edit')->name('admin.team.panel.edit');
+            Route::put('{id}/update','TeamPanelNameController@update')->name('admin.team.panel.update');
+            Route::get('trash','TeamPanelNameController@trashIndex')->name('admin.team.panel.trash');
+            Route::get('{id}/restore','TeamPanelNameController@restore')->name('admin.team.panel.restore');
+            Route::get('{id}/forcedelete','TeamPanelNameController@forceDelete')->name('admin.team.panel.delete');
+        });
+        //For SOE TEAM
+        Route::get('index','TeamController@index')->name('admin.team.index');
+        Route::get('create','TeamController@create')->name('admin.team.create');
+        Route::post('store','TeamController@store')->name('admin.team.store');
+        Route::get('delete/{id}','TeamController@delete')->name('admin.team.delete');
+        Route::get('{id}/edit','TeamController@edit')->name('admin.team.edit');
+        Route::put('{id}/update','TeamController@update')->name('admin.team.update');
+        Route::get('trash','TeamController@trashIndex')->name('admin.team.trash.index');
+        Route::get('{id}/restore','TeamController@restore')->name('admin.team.trash.restore');
+        Route::get('{id}/forcedelete','TeamController@forceDelete')->name('admin.team.trash.delete');
+    });
     //Admin Login
     Route::get('/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\LoginController@login');
