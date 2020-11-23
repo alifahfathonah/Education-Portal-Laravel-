@@ -166,12 +166,14 @@
                                             <a href="{{route('user.blog')}}">Blog</a>
                                         </li>
                                         <li>
-                                            <a href="">About Us</a>
+                                            <a href="javascript:void(0)">About Us</a>
                                             <ul class="dropdown-menu-item">
-                                                <li><a href="about.html">About, SOE</a></li>
-                                                <li><a href="contact.html">Contact Us</a></li>
+                                                <li><a href="{{route('user.about')}}">About, SOE</a></li>
+                                                <li><a href="{{route('user.contact.us')}}">Contact Us</a></li>
                                                 <li><a href="team.html">SOE Team</a></li>
-                                                <li><a href="signup.html">Become a Member</a></li>
+                                                @if(Route::has('register'))
+                                                    <li><a href="{{route('register')}}">Become a Member</a></li>
+                                                @endif
                                             </ul>
                                         </li>
                                     </ul><!-- end ul -->

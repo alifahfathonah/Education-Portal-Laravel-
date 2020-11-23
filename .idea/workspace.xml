@@ -11,21 +11,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="407f3d8c-4f46-4f0d-adb9-fca67e672a7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/uploads/team/main/Team_main_1606121077_123432447_2521430918156145_4250722511902513216_o.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/team/main/Team_main_1606121096_123432447_2521430918156145_4250722511902513216_o.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Frontend/Contact.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_23_103551_create_contacts_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/team/main/Team_main_1606129317_123388681_3510418612386499_8292739081899680123_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/team/main/Team_main_1606129989_123432447_2521430918156145_4250722511902513216_o.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/basic/about.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/basic/contact-us.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/basic/team.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/inc/home-menu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BlogController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TeamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TeamController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Admin/BlogCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Admin/BlogCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Admin/Team.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Admin/Team.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Admin/TeamPanelName.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Admin/TeamPanelName.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/inc/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/inc/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/team/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/team/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/team/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/team/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/team/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/team/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/team/team_panel/trash.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/team/team_panel/trash.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/team/trash.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/team/trash.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/asset/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/asset/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/homeapp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/homeapp.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/innerapp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/innerapp.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -317,7 +317,7 @@
       <workItem from="1605935699072" duration="19046000" />
       <workItem from="1606024816015" duration="603000" />
       <workItem from="1606025748266" duration="16886000" />
-      <workItem from="1606107956528" duration="9972000" />
+      <workItem from="1606107956528" duration="14966000" />
     </task>
     <servers />
   </component>
@@ -372,9 +372,20 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1605435792010" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606045878771">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606128842057">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606045878771" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606128842057" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/frontend/layouts/homeapp.blade.php</url>
+          <line>112</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

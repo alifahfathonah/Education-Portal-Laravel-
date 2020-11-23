@@ -17,7 +17,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::namespace('Frontend')->group(function (){
     Route::get('/','HomeController@index')->name('user.home');
 //    Route::get('/information','HomeController@information')->name('user.information');
-
     Route::prefix('skill-development')->group(function (){
         //Skill Development Retrieve
         Route::get('/soft-skill','HomeController@softSkill')->name('user.skill.softskill');
@@ -36,6 +35,13 @@ Route::namespace('Frontend')->group(function (){
     });
     Route::get('blog','HomeController@blog')->name('user.blog');
     Route::get('blog/category/{id}','HomeController@category')->name('user.blog.category');
+
+
+    //Basic Section
+    Route::get('about','HomeController@about')->name('user.about');
+    Route::get('contact','HomeController@contactUs')->name('user.contact.us');
+    Route::post('contact/store','HomeController@contactStore')->name('user.contact.store');
+    Route::get('soe-team','HomeController@soeTeam')->name('user.soe.team');
 });
 
 

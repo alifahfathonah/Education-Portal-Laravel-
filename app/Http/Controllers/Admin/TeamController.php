@@ -147,7 +147,6 @@ class TeamController extends Controller
                 'admins'=>Admin::all()
             ]);
     }
-
     public function restore($id)
     {
         $team = Team::withTrashed()->where('id',$id)->restore();

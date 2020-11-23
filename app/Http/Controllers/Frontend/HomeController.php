@@ -7,7 +7,12 @@ use App\Model\Admin\Admin;
 use App\Model\Admin\Blog;
 use App\Model\Admin\BlogCategory;
 use App\Model\Admin\Skill;
+use App\Model\Admin\Team;
+use App\Model\Admin\TeamPanelName;
 use App\Model\Admin\Tips;
+use App\Model\Frontend\Contact;
+use http\Message;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -130,5 +135,45 @@ class HomeController extends Controller
     public function category($category)
     {
         return $category;
+    }
+
+    public function about()
+    {
+        return view('frontend.basic.about');
+    }
+
+    public function contactUs()
+    {
+        return view('frontend.basic.contact-us');
+    }
+
+    public function contactStore(Request $request)
+    {
+        $this->validate($request,[
+            'name'=>['required','max:255'],
+            'email'=>['required','email','max:255'],
+            'phone'=>['required','max:15'],
+            'subject'=>['required','max:255'],
+            'message'=>['required']
+        ]);
+        $contact = new Contact();
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->phone = $request->phone;
+        $contact->subject = $request->subject;
+        $contact->message = $request->message;
+        $contact->save();
+        alert('Contact Us')->success('Success','Message sent successfully..!!');
+        return redirect()->back();
+    }
+    //For SOE Team
+    public function soeTeam()
+    {
+        $team = Team::where('status',1)->get();
+        return view('frontend.basic.team')
+            ->with([
+                'panelNames'=>TeamPanelName::where('status',1)->get(),
+                'teams'=>$team
+            ]);
     }
 }
