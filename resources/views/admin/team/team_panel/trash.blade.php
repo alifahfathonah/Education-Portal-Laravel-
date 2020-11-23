@@ -39,10 +39,10 @@
                             </td>
 
                             <td>
-                                <a data-toggle="tooltip" title="Restore" href="{{route('admin.team.panel.restore',['id'=>$panel->id])}}" class="btn btn-sm btn-primary restore">
+                                <a data-toggle="tooltip" title="Restore" href="{{route('admin.team.panel.trash.restore',['id'=>$panel->id])}}" class="btn btn-sm btn-primary restore">
                                     <i class="fa fa-recycle"></i>
                                 </a>
-                                <a  data-toggle="tooltip" title="Delete" href="{{route('admin.team.panel.delete',['id'=>$panel->id])}}" class="btn btn-sm btn-danger delete">
+                                <a  data-toggle="tooltip" title="Delete" href="{{route('admin.team.panel.trash.delete',['id'=>$panel->id])}}" class="btn btn-sm btn-danger delete">
                                     <i class="fa fa-trash"></i>
                                 </a>
                             </td>
@@ -79,7 +79,28 @@
                 var link = $(this).attr('href');
                 Swal.fire({
                     title: 'Are you sure?',
-                    text: "You want to delete Skill?",
+                    text: "You want to permanently delete Team Panel Name ?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.value) {
+                        window.location.href = link;
+                    }
+                })
+            })
+        });
+    </script>
+    <script>
+        $(function () {
+            $(document).on('click','.restore',function (e) {
+                e.preventDefault();
+                var link = $(this).attr('href');
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You want to restore Team Panel Name ?",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',

@@ -126,8 +126,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
             Route::get('{id}/edit','TeamPanelNameController@edit')->name('admin.team.panel.edit');
             Route::put('{id}/update','TeamPanelNameController@update')->name('admin.team.panel.update');
             Route::get('trash','TeamPanelNameController@trashIndex')->name('admin.team.panel.trash');
-            Route::get('{id}/restore','TeamPanelNameController@restore')->name('admin.team.panel.restore');
-            Route::get('{id}/forcedelete','TeamPanelNameController@forceDelete')->name('admin.team.panel.delete');
+            Route::get('{id}/restore','TeamPanelNameController@restore')->name('admin.team.panel.trash.restore');
+            Route::get('{id}/forcedelete','TeamPanelNameController@forceDelete')->name('admin.team.panel.trash.delete');
         });
         //For SOE TEAM
         Route::get('index','TeamController@index')->name('admin.team.index');

@@ -27,7 +27,6 @@ class BlogController extends Controller
 
             ]);
     }
-
     public function categoryCreate()
     {
         return view('admin.blog.category_create');
@@ -227,6 +226,7 @@ class BlogController extends Controller
     public function trashIndex()
     {
         $blogs = Blog::with('blogcategories')->onlyTrashed()->get();
+        return $blogs;
         $admin = Admin::all();
         return view('admin.blog.trash')
             ->with([

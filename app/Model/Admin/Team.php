@@ -9,4 +9,9 @@ class Team extends Model
 {
     //
     use SoftDeletes;
+
+    public function teamPanelNames()
+    {
+        return $this->hasOne(TeamPanelName::class,'id','panel_name_id');
+    }
 }

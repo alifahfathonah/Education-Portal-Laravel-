@@ -168,8 +168,18 @@
                                     <span class="nav-text">Panel Name Trash</span>
                                 </a>
                             </li>
-                            <li class="@if($currentRouteName === 'admin.partner.trash.index') active @endif">
-                                <a class="sidenav-item-link" href="{{route('admin.partner.trash.index')}}">
+                            <li class="@if($currentRouteName === 'admin.team.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.team.index')}}">
+                                    <span class="nav-text">Index</span>
+                                </a>
+                            </li>
+                            <li class="@if($currentRouteName === 'admin.team.create') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.team.create')}}">
+                                    <span class="nav-text">Add Team</span>
+                                </a>
+                            </li>
+                            <li class="@if($currentRouteName === 'admin.team.trash.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.team.trash.index')}}">
                                     <span class="nav-text">Trash</span>
                                 </a>
                             </li>

@@ -9,7 +9,6 @@ class BlogCategory extends Model
 {
     //
     use SoftDeletes;
-
     public function blogs()
     {
         return $this->hasMany(Blog::class,'category','id');
