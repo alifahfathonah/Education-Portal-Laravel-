@@ -42,6 +42,9 @@ Route::namespace('Frontend')->group(function (){
     Route::get('contact','HomeController@contactUs')->name('user.contact.us');
     Route::post('contact/store','HomeController@contactStore')->name('user.contact.store');
     Route::get('soe-team','HomeController@soeTeam')->name('user.soe.team');
+    Route::get('blood-donation','HomeController@bloodDonation')->name('user.blood.donation');
+    Route::get('event-campaign','HomeController@eventCampaign')->name('user.event');
+    Route::get('event-campaign/details/{slug}','HomeController@eventDetails')->name('user.event.detail');
 });
 
 
@@ -145,6 +148,14 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         Route::get('trash','TeamController@trashIndex')->name('admin.team.trash.index');
         Route::get('{id}/restore','TeamController@restore')->name('admin.team.trash.restore');
         Route::get('{id}/forcedelete','TeamController@forceDelete')->name('admin.team.trash.delete');
+    });
+    Route::prefix('event-campaign')->group(function (){
+        Route::get('index','EventController@index')->name('admin.event.index');
+        Route::get('create','EventController@create')->name('admin.event.create');
+        Route::post('store','EventController@store')->name('admin.event.store');
+        Route::get('delete/{id}','EventController@delete')->name('admin.event.delete');
+        Route::get('{id}/edit','EventController@edit')->name('admin.event.edit');
+        Route::put('{id}/update','EventController@update')->name('admin.event.update');
     });
     //Admin Login
     Route::get('/login', 'Auth\LoginController@showLoginForm')->name('admin.login');

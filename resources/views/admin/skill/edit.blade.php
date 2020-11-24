@@ -8,7 +8,7 @@
             </a>
         </div>
         <div class="card-body">
-            <form action="{{route('admin.skill.update',['id'=>$skill->id])}}" method="post" enctype="multipart/form-data">@csrf
+            <form action="{{route('admin.event.update',['id'=>$skill->id])}}" method="post" enctype="multipart/form-data">@csrf
                 {{method_field('PUT')}}
                 <div class="form-group">
                     <label for="title">Skill Title :</label>

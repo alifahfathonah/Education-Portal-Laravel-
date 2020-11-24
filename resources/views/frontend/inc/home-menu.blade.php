@@ -10,7 +10,7 @@
             <div class="col-md-10">
                 <div class="wrap-col">
                     <div class="shape">
-                        <a href="contact.html">Conatct us</a>
+                        <a href="{{route('user.contact.us')}}">Conatct us</a>
                     </div>
                     <div class="shape3">
                         <form action="">
@@ -59,7 +59,7 @@
                                         <li><a href="careeractivity.html">Training Activity</a></li>
 
                                         <li><a href="careeractivity.html">Seminar and Workshop</a></li>
-                                        <li><a href="blood.html">Blood Donation</a></li>
+                                        <li><a href="{{route('user.blood.donation')}}">Blood Donation</a></li>
                                         <li>
                                             <a href="#">Media</a>
                                             <ul class="dropdown-menu-item">

@@ -186,6 +186,28 @@
                         </div>
                     </ul>
                 </li>
+                <li>
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#event"
+                       aria-expanded="false" aria-controls="dashboard">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">Event/Campaign</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse @if($prefix === 'admin/event-campaign') show @endif @if($prefix === 'admin/team/panel-name') show @endif"  id="event"
+                         data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li class="@if($currentRouteName === 'admin.event.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.event.index')}}">
+                                    <span class="nav-text">Index</span>
+                                </a>
+                            </li>
+                            <li class="@if($currentRouteName === 'admin.event.create') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.event.create')}}">
+                                    <span class="nav-text">Add Event</span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

@@ -6,11 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Model\Admin\Admin;
 use App\Model\Admin\Blog;
 use App\Model\Admin\BlogCategory;
+use App\Model\Admin\Event;
 use App\Model\Admin\Skill;
 use App\Model\Admin\Team;
 use App\Model\Admin\TeamPanelName;
 use App\Model\Admin\Tips;
 use App\Model\Frontend\Contact;
+use Carbon\Carbon;
 use http\Message;
 use Illuminate\Http\Request;
 
@@ -18,7 +20,13 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        $event = Event::where('event_type','Event')->where('status',1)->whereDate('start_date','<=',Carbon::now())->orderByDesc('start_date')->limit(6)->get();
+        $upComingEvents = Event::where('event_type','Event')->where('status',1)->whereDate('start_date','>',Carbon::now())->orderByDesc('start_date')->limit(3)->get();
+        return view('frontend.index')
+            ->with([
+                'events'=>$event,
+                'upcomingEvents'=>$upComingEvents
+            ]);
     }
     public function information()
     {
@@ -175,5 +183,34 @@ class HomeController extends Controller
                 'panelNames'=>TeamPanelName::where('status',1)->get(),
                 'teams'=>$team
             ]);
+    }
+
+    public function bloodDonation()
+    {
+        return view('frontend.basic.blood-donation');
+    }
+
+    public function eventCampaign()
+    {
+        $event = Event::where('event_type','Event')
+            ->where('status',1)
+            ->orderByDesc('start_date')
+            ->paginate(8);
+        $campaigns = Event::where('event_type','Campaign')
+            ->where('status',1)
+            ->orderByDesc('start_date')
+            ->paginate(8);
+
+        return view('frontend.event.index')
+            ->with([
+                'events'=>$event,
+                'campaigns'=>$campaigns
+            ]);
+    }
+
+    public function eventDetails($slug)
+    {
+        $event = Event::where('slug',$slug)->first();
+        return $event;
     }
 }

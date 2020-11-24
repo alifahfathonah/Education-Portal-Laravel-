@@ -118,7 +118,7 @@
 
     <!--Google Map Start-->
     <div class="map-responsive">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.815442450476!2d90.39083931445589!3d23.753959894558356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b80bd5cb2eb5%3A0x97f7cabd3ef1387d!2sEzze%20Technology%20Ltd!5e0!3m2!1sen!2smx!4v1603777770067!5m2!1sen!2smx"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d912.0798524200086!2d90.39800831526149!3d23.8782898529775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c43ed4656af3%3A0x1518002d20b4a418!2sHouse%20No-37%2C%205%20Rd%20No%3A%2009%2C%20Dhaka%201230!5e0!3m2!1sen!2sbd!4v1606194137064!5m2!1sen!2sbd"></iframe>
     </div>
     <!--Google Map End-->
     @include('sweetalert::alert')
