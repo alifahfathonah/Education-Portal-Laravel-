@@ -15,6 +15,7 @@ use App\Model\Frontend\Contact;
 use Carbon\Carbon;
 use http\Message;
 use Illuminate\Http\Request;
+use function React\Promise\all;
 
 class HomeController extends Controller
 {
@@ -22,10 +23,13 @@ class HomeController extends Controller
     {
         $event = Event::where('event_type','Event')->where('status',1)->whereDate('start_date','<=',Carbon::now())->orderByDesc('start_date')->limit(6)->get();
         $upComingEvents = Event::where('event_type','Event')->where('status',1)->whereDate('start_date','>',Carbon::now())->orderByDesc('start_date')->limit(3)->get();
+        $latestBlog = Blog::where('status',1)->limit(6)->get();
         return view('frontend.index')
             ->with([
                 'events'=>$event,
-                'upcomingEvents'=>$upComingEvents
+                'upcomingEvents'=>$upComingEvents,
+                'latestBlog' => $latestBlog,
+                'admins'=>Admin::all()
             ]);
     }
     public function information()
@@ -79,7 +83,13 @@ class HomeController extends Controller
         $skillDetails = Skill::where('status',1)
             ->where('slug',$slug)
             ->first();
-        return $skillDetails;
+        $relatedSkill = Skill::where('status',1)->orderByDesc('created_at')->get();
+        return view('frontend.skill_development.details')
+            ->with([
+                'skill'=>$skillDetails,
+                'admins'=>Admin::all(),
+                'relateds'=>$relatedSkill
+            ]);
     }
     public function interviewTips()
     {
@@ -87,12 +97,11 @@ class HomeController extends Controller
             ->where('status',1)
             ->orderByDesc('id')
             ->paginate(9);
-        $mostPopular = Tips::orderByDesc('id')->limit(5)->get();
+
 
         return view('frontend.tips_and_tricks.interview')
             ->with([
                 'interviews'=>$interview,
-                'populars'=>$mostPopular
             ]);
     }
 
@@ -102,7 +111,10 @@ class HomeController extends Controller
             ->where('status',1)
             ->orderByDesc('id')
             ->paginate(9);
-        return $educational;
+        return view('frontend.tips_and_tricks.educational')
+        ->with([
+            'interviews'=>$educational,
+        ]);
     }
 
     public function careerAndPlaningTips()
@@ -111,7 +123,10 @@ class HomeController extends Controller
             ->where('status',1)
             ->orderByDesc('id')
             ->paginate(9);
-        return $career;
+        return view('frontend.tips_and_tricks.career')
+            ->with([
+                'interviews'=>$career,
+            ]);
     }
 
     public function othersTips()
@@ -120,12 +135,21 @@ class HomeController extends Controller
             ->where('status',1)
             ->orderByDesc('id')
             ->paginate(9);
-        return $others;
+        return view('frontend.tips_and_tricks.others')
+            ->with([
+                'interviews'=>$others,
+            ]);
     }
-
     public function tipsDetails($slug)
     {
-        return $slug;
+        $tips = Tips::where('status',1)->where('slug',$slug)->first();
+        $popular = Tips::where('status',1)->orderByDesc('created_at')->get();
+        return view('frontend.tips_and_tricks.details')
+            ->with([
+                'tips'=>$tips,
+                'admins'=>Admin::all(),
+                'relateds'=>$popular
+            ]);
     }
 
     public function blog()
@@ -154,7 +178,6 @@ class HomeController extends Controller
     {
         return view('frontend.basic.contact-us');
     }
-
     public function contactStore(Request $request)
     {
         $this->validate($request,[
@@ -210,7 +233,18 @@ class HomeController extends Controller
 
     public function eventDetails($slug)
     {
-        $event = Event::where('slug',$slug)->first();
-        return $event;
+        $event = Event::where('slug',$slug)->where('status',1)->first();
+        $allPrograme = Event::where('status',1)->orderByDesc('start_date')->get();
+        return view('frontend.event.details')
+            ->with([
+                'event'=>$event,
+                'admins'=>Admin::all(),
+                'relateds'=>$allPrograme
+            ]);
+    }
+
+    public function uploadDocument()
+    {
+        return view('frontend.basic.upload-document');
     }
 }

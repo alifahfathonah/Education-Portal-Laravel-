@@ -145,7 +145,7 @@
                             </style>
                             <ul>
                                 <li class="ticket-button-box">
-                                    <a href="upload-document.html" class="btn btn-danger" style="background: #EE5222"><i class="fa fa-upload"></i> Upload Document</a>
+                                    <a href="{{route('user.document.upload')}}" class="btn btn-danger" style="background: #EE5222"><i class="fa fa-upload"></i> Upload Document</a>
                                 </li>
                             </ul>
                             <div class="side-menu-open">

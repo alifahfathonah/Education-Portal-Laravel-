@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{asset('frontend/asset/css/fancybox.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/asset/css/style.css')}}">
     <!-- end inject -->
+    @yield('css')
 </head>
 <body>
 
@@ -304,7 +305,7 @@
 <script src="{{asset('frontend/asset/js/wow.js')}}"></script>
 <script src="{{asset('frontend/asset/js/smooth-scrolling.js')}}"></script>
 <script src="{{asset('frontend/asset/js/main.js')}}"></script>
-
+@yield('js')
 
 </body>
 

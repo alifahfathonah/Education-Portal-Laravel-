@@ -48,12 +48,14 @@
     </div>
 @endsection
 
+@section('css')
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+@endsection
 @section('js')
-    {{--    <script src="{{asset('backend/assets/ckeditor/ckeditor.js')}}"></script>--}}
-    <script src="https://ckeditor.com/assets/libs/ckeditor4/4.15.1/ckeditor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
     <script>
-        $(document).ready(function(){
-            CKEDITOR.replace('description');
+        $('#description').summernote({
+            height:800
         });
     </script>
 @endsection

@@ -8817,6 +8817,7 @@ div#blood_section{
 
 .blog-area4 .blog-content-wrap .blog-item .blog-img-box img {
     width: 100%;
+    max-height: 500px;
     -webkit-border-radius: 4px 4px 0 0;
     -moz-border-radius: 4px 4px 0 0;
     border-radius: 4px 4px 0 0
@@ -8826,10 +8827,11 @@ div#blood_section{
     position: absolute;
     top: 20px;
     left: 20px;
-    background-color: #fff;
+    background-color: #EE5222;
     text-transform: capitalize;
     font-weight: 500;
-    color: #233d63;
+    color: #fff;
+    font-weight: bold;
     display: inline-block;
     padding: 8px 12px;
     -webkit-border-radius: 4px;

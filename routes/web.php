@@ -36,7 +36,6 @@ Route::namespace('Frontend')->group(function (){
     Route::get('blog','HomeController@blog')->name('user.blog');
     Route::get('blog/category/{id}','HomeController@category')->name('user.blog.category');
 
-
     //Basic Section
     Route::get('about','HomeController@about')->name('user.about');
     Route::get('contact','HomeController@contactUs')->name('user.contact.us');
@@ -45,6 +44,7 @@ Route::namespace('Frontend')->group(function (){
     Route::get('blood-donation','HomeController@bloodDonation')->name('user.blood.donation');
     Route::get('event-campaign','HomeController@eventCampaign')->name('user.event');
     Route::get('event-campaign/details/{slug}','HomeController@eventDetails')->name('user.event.detail');
+    Route::get('upload-document','HomeController@uploadDocument')->name('user.document.upload');
 });
 
 
