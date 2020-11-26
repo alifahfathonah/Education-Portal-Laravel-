@@ -208,6 +208,40 @@
                         </div>
                     </ul>
                 </li>
+                <li>
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#media"
+                       aria-expanded="false" aria-controls="dashboard">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">Media</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse @if($prefix === 'admin/media/video-gallery') show @endif"  id="media"
+                         data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li class="@if($currentRouteName === 'admin.video.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.video.index')}}">
+                                    <span class="nav-text">Video Index</span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+                <li>
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#single"
+                       aria-expanded="false" aria-controls="dashboard">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">Single Component</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse @if($prefix === 'admin/single-component/success-story') show @endif"  id="single"
+                         data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li class="@if($currentRouteName === 'admin.story.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.story.index')}}">
+                                    <span class="nav-text">Success Story</span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

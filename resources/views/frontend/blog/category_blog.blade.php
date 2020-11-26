@@ -6,6 +6,7 @@
     <section class="course-area course-area3">
         <div class="course-wrapper">
             <div class="container">
+
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="course-tab-wrap">
@@ -17,7 +18,7 @@
                                 </li>
                                 @foreach($categories as $category)
                                     <li role="presentation">
-                                        <a href="{{route('user.blog.category',['category'=>$category->id])}}">
+                                        <a href="{{route('user.blog.category',['category'=>$category->id])}}" class="@if(Request::path() === 'blog/category/'.$category->id) active @endif">
                                             {{$category->name}}
                                         </a>
                                     </li>
@@ -36,30 +37,39 @@
                     <div class="col-lg-12">
                         <div class="tab-content">
                             <div class="row course-block">
-                                @foreach($blogs as $blog)
-                                    <div class="col-lg-4">
-                                        <div class="course-item">
-                                            <div class="course-img">
-                                                <a href="{{route('user.blog.details',['slug'=>$blog->slug])}}" class="course__img"><img src="{{url('uploads/blog/thumb/'.$blog->thumb)}}" alt=""></a>
-                                            </div><!-- end course-img -->
-                                            <div class="course-content">
-                                                <p class="course__label">
-                                                    Posted By:
-                                                    <span class="course__label-text">
+                                @if(count($blogs) > 0)
+                                    @foreach($blogs as $blog)
+                                        <div class="col-lg-4">
+                                            <div class="course-item">
+                                                <div class="course-img">
+                                                    <a href="{{route('user.blog.details',['slug'=>$blog->slug])}}" class="course__img"><img src="{{url('uploads/blog/thumb/'.$blog->thumb)}}" alt=""></a>
+                                                </div><!-- end course-img -->
+                                                <div class="course-content">
+                                                    <p class="course__label">
+                                                        Posted By:
+                                                        <span class="course__label-text">
                                                         @foreach($admins as $admin)
-                                                            @if($blog->created_by === $admin->id)
-                                                                {{$admin->name}}
-                                                            @endif
-                                                        @endforeach
+                                                                @if($blog->created_by === $admin->id)
+                                                                    {{$admin->name}}
+                                                                @endif
+                                                            @endforeach
                                                     </span>
-                                                </p>
-                                                <h3 class="course__title">
-                                                    <a href="{{route('user.blog.details',['slug'=>$blog->slug])}}">{{\Illuminate\Support\Str::limit($blog->title,100,'(...)')}}</a>
-                                                </h3>
-                                            </div><!-- end course-content -->
-                                        </div><!-- end course-item -->
+                                                    </p>
+                                                    <h3 class="course__title">
+                                                        <a href="{{route('user.blog.details',['slug'=>$blog->slug])}}">{{\Illuminate\Support\Str::limit($blog->title,100,'(...)')}}</a>
+                                                    </h3>
+                                                </div><!-- end course-content -->
+                                            </div><!-- end course-item -->
+                                        </div>
+                                    @endforeach
+                                @else
+                                    <div class="blog-post" style="text-align: center;display: block;width: 100%;">
+                                        <div class="alert alert-danger" role="alert" style="display: inline-block; padding-left: 50px;padding-right: 50px;">
+                                            No blog post found on this category
+                                        </div>
                                     </div>
-                                @endforeach
+
+                                @endif
                             </div><!-- end course-block -->
                         </div><!-- end tab-content -->
                     </div><!-- end col-lg-12 -->

@@ -8,9 +8,11 @@ use App\Model\Admin\Blog;
 use App\Model\Admin\BlogCategory;
 use App\Model\Admin\Event;
 use App\Model\Admin\Skill;
+use App\Model\Admin\SuccessStory;
 use App\Model\Admin\Team;
 use App\Model\Admin\TeamPanelName;
 use App\Model\Admin\Tips;
+use App\Model\Admin\Video;
 use App\Model\Frontend\Contact;
 use Carbon\Carbon;
 use http\Message;
@@ -24,12 +26,16 @@ class HomeController extends Controller
         $event = Event::where('event_type','Event')->where('status',1)->whereDate('start_date','<=',Carbon::now())->orderByDesc('start_date')->limit(6)->get();
         $upComingEvents = Event::where('event_type','Event')->where('status',1)->whereDate('start_date','>',Carbon::now())->orderByDesc('start_date')->limit(3)->get();
         $latestBlog = Blog::where('status',1)->limit(6)->get();
+        $videos = Video::where('status',1)->orderByDesc('created_at')->limit(4)->get();
+        $successStories = SuccessStory::where('status',1)->orderByDesc('id')->limit(8)->get();
         return view('frontend.index')
             ->with([
                 'events'=>$event,
                 'upcomingEvents'=>$upComingEvents,
                 'latestBlog' => $latestBlog,
-                'admins'=>Admin::all()
+                'admins'=>Admin::all(),
+                'videos'=>$videos,
+                'successStories'=>$successStories
             ]);
     }
     public function information()
@@ -155,7 +161,7 @@ class HomeController extends Controller
     public function blog()
     {
         $categories = BlogCategory::where('status',1)->orderByDesc('id')->get();
-        $blogs = Blog::where('status',1)->orderByDesc('id')->get();
+        $blogs = Blog::where('status',1)->orderByDesc('created_at')->paginate(6);
         $admins = Admin::all();
         return view('frontend.blog.blog')
             ->with([
@@ -166,9 +172,28 @@ class HomeController extends Controller
     }
     public function category($category)
     {
-        return $category;
+        $blog = Blog::where('status',1)->where('category',$category)->orderByDesc('created_at')->paginate(6);
+        $categories = BlogCategory::where('status',1)->orderByDesc('id')->get();
+        $admins = Admin::all();
+        return view('frontend.blog.category_blog')
+            ->with([
+                'categories'=>$categories,
+                'blogs'=>$blog,
+                'admins'=>$admins
+            ]);
     }
 
+    public function blogDetails($slug)
+    {
+        $blog = Blog::with('blogcategories')->where('status',1)->where('slug',$slug)->first();
+        $relateds = Blog::where('status',1)->orderByDesc('created_at')->get();
+        return view('frontend.blog.details')
+            ->with([
+                'blog'=>$blog,
+                'admins'=>Admin::all(),
+                'relateds'=>$relateds
+            ]);
+    }
     public function about()
     {
         return view('frontend.basic.about');
@@ -246,5 +271,14 @@ class HomeController extends Controller
     public function uploadDocument()
     {
         return view('frontend.basic.upload-document');
+    }
+
+    public function videoGallery()
+    {
+        $videos = Video::where('status',1)->orderByDesc('created_at')->paginate(12);
+        return view('frontend.basic.video-gallery')
+            ->with([
+                'videos'=>$videos
+            ]);
     }
 }

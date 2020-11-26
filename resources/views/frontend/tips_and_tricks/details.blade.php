@@ -54,14 +54,14 @@
                                     @if($key < 5)
                                         <div class="recent-item">
                                             <div class="recent-img">
-                                                <a href="{{route('user.skill.details',['slug'=>$related->slug])}}">
+                                                <a href="{{route('user.tips.details',['slug'=>$related->slug])}}">
                                                     <img src="{{url('uploads/tips/thumb/'.$related->thumb)}}" alt="blog image">
                                                 </a>
                                             </div><!-- end recent-img -->
                                             <div class="recentpost-body">
                                                 <span class="recent__meta">{{\Carbon\Carbon::parse($related->start_date)->isoFormat('Do MMM, YYYY')}}</span>
                                                 <h4 class="recent__link">
-                                                    <a href="{{route('user.event.detail',['slug'=>$related->slug])}}">{{\Illuminate\Support\Str::limit($related->title,60,'..')}}</a>
+                                                    <a href="{{route('user.tips.details',['slug'=>$related->slug])}}">{{\Illuminate\Support\Str::limit($related->title,60,'..')}}</a>
                                                 </h4>
                                             </div><!-- end recent-img -->
                                         </div>

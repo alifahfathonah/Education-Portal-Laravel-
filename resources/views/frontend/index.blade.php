@@ -197,17 +197,19 @@
                     <div class="upcoming-event-box">
                         @foreach($upcomingEvents as $upComing)
                             <div class="card mb-3 border-0 shadow-sm">
-                                <div class="row no-gutters">
-                                    <div class="col-md-4">
-                                        <img src="{{url('uploads/event/thumb/'.$upComing->thumb)}}" class="card-img" alt="...">
-                                    </div>
-                                    <div class="col-md-8 align-self-center">
-                                        <div class="card-body">
-                                            <p class="card-text">{{$upComing->short_title}}</p>
-                                            <p class="card-text"><small class="text-muted">{{\Carbon\Carbon::parse($upComing->start_date)->isoFormat('Do MMM, YYYY')}}</small></p>
+                                <a href="{{route('user.event.detail',['slug'=>$upComing->slug])}}">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4">
+                                            <img src="{{url('uploads/event/thumb/'.$upComing->thumb)}}" class="card-img" alt="...">
+                                        </div>
+                                        <div class="col-md-8 align-self-center">
+                                            <div class="card-body">
+                                                <p class="card-text" style="color:#EE5222">{{$upComing->short_title}}</p>
+                                                <p class="card-text"><small class="text-muted">{{\Carbon\Carbon::parse($upComing->start_date)->isoFormat('Do MMM, YYYY')}}</small></p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         @endforeach
                     </div>
@@ -215,6 +217,53 @@
             </div><!-- end row -->
         </div><!-- end container -->
     </section><!-- end category-area -->
+    <section class="video-news-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="section-heading">
+                        <h2 class="section__title">Latest Videos</h2>
+                        <span class="section__divider"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card p-0 shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="{{$videos[0]->link}}"></iframe>
+                            </div>
+                            <h6 class="mt-3">{{$videos[0]->title}}</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 news-section">
+                    @foreach($videos as $key=>$video)
+                        @if($key > 0 && $key < 4)
+                            <div class="card mb-3 border-0 shadow-sm">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <iframe class="embed-responsive-item" src="{{$video->link}}" width="190" height="108"></iframe>
+                            </div>
+                            <div class="col-md-8 align-self-center">
+                                <div class="card-body">
+                                    <p class="card-text">{{$video->title}}</p>
+                                    <p class="card-text"><small class="text-muted">{{\Carbon\Carbon::parse($video->created_at)->isoFormat('Do MMM, YYYY')}}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        @endif
+                    @endforeach
+                    <div class="button-shared text-right">
+                        <a href="{{route('user.video.gallery')}}" class="theme-btn">More videos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="quick-activity">
         <div class="container">
             <div class="row">
@@ -293,132 +342,26 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="testimonial-wrap">
+                        @foreach($successStories as $successStory)
                         <div class="testimonial-item">
                             <div class="testimonial__name">
-                                <img src="{{asset('frontend/asset/images/testi-img3.jpg')}}" alt="small-avatar">
-                                <h3 class="testimonial__name-title">Bernice Pease</h3>
-                                <span class="testimonial__name-meta">student</span>
-                                <span class="testimonial__name-rating">
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
+                                <img src="{{url('uploads/story/main/'.$successStory->image)}}" alt="small-avatar">
+                                <h3 class="testimonial__name-title">{{$successStory->name}}</h3>
+                                <span class="testimonial__name-meta">{{ucfirst($successStory->designation)}}</span>
+                                <span style="display: block" class="testimonial__name-rating">
+                                    @for($i = 0; $i < $successStory->rating;$i++)
+                                        <i class="la la-star"></i>
+                                    @endfor
                             </span>
                             </div><!-- end testimonial__name -->
                             <div class="testimonial__desc">
                                 <p class="testimonial__desc-desc">
-                                    The best part about Aduca is the selection.
-                                    You can find a course for anything you want to learn!
-                                    really Aduca i closed with you.
+                                    {{$successStory->story}}
                                 </p>
                             </div><!-- end testimonial__desc -->
-                        </div><!-- end testimonial-item -->
-                        <div class="testimonial-item">
-                            <div class="testimonial__name">
-                                <img src="{{asset('frontend/asset/images/testi-img4.jpg')}}" alt="small-avatar">
-                                <h3 class="testimonial__name-title">Daniel Ward</h3>
-                                <span class="testimonial__name-meta">student</span>
-                                <span class="testimonial__name-rating">
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                            </span>
-                            </div><!-- end testimonial__name -->
-                            <div class="testimonial__desc">
-                                <p class="testimonial__desc-desc">
-                                    The best part about Aduca is the selection.
-                                    You can find a course for anything you want to learn!
-                                    really Aduca i closed with you.
-                                </p>
-                            </div><!-- end testimonial__desc -->
-                        </div><!-- end testimonial-item -->
-                        <div class="testimonial-item">
-                            <div class="testimonial__name">
-                                <img src="{{asset('frontend/asset/images/testi-img.jpg')}}" alt="small-avatar">
-                                <h3 class="testimonial__name-title">Kevin Martin</h3>
-                                <span class="testimonial__name-meta">student</span>
-                                <span class="testimonial__name-rating">
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                            </span>
-                            </div><!-- end testimonial__name -->
-                            <div class="testimonial__desc">
-                                <p class="testimonial__desc-desc">
-                                    The best part about Aduca is the selection.
-                                    You can find a course for anything you want to learn!
-                                    really Aduca i closed with you.
-                                </p>
-                            </div><!-- end testimonial__desc -->
-                        </div><!-- end testimonial-item -->
-                        <div class="testimonial-item">
-                            <div class="testimonial__name">
-                                <img src="{{asset('frontend/asset/images/testi-img6.jpg')}}" alt="small-avatar">
-                                <h3 class="testimonial__name-title">Mike Hardson</h3>
-                                <span class="testimonial__name-meta">student</span>
-                                <span class="testimonial__name-rating">
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                            </span>
-                            </div><!-- end testimonial__name -->
-                            <div class="testimonial__desc">
-                                <p class="testimonial__desc-desc">
-                                    The best part about Aduca is the selection.
-                                    You can find a course for anything you want to learn!
-                                    really Aduca i closed with you.
-                                </p>
-                            </div><!-- end testimonial__desc -->
-                        </div><!-- end testimonial-item -->
-                        <div class="testimonial-item">
-                            <div class="testimonial__name">
-                                <img src="{{asset('frontend/asset/images/testi-img2.jpg')}}" alt="small-avatar">
-                                <h3 class="testimonial__name-title">Bernice Pease</h3>
-                                <span class="testimonial__name-meta">student</span>
-                                <span class="testimonial__name-rating">
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                                <i class="la la-star"></i>
-                            </span>
-                            </div><!-- end testimonial__name -->
-                            <div class="testimonial__desc">
-                                <p class="testimonial__desc-desc">
-                                    The best part about Aduca is the selection.
-                                    You can find a course for anything you want to learn!
-                                    really Aduca i closed with you.
-                                </p>
-                            </div><!-- end testimonial__desc -->
-                        </div><!-- end testimonial-item -->
-                        <div class="testimonial-item">
-                            <div class="testimonial__name">
-                                <img src="{{asset('frontend/asset/images/testi-img3.jpg')}}" alt="small-avatar">
-                                <h3 class="testimonial__name-title">Daniel Ward</h3>
-                                <span class="testimonial__name-meta">student</span>
-                                <span class="testimonial__name-rating">
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                                 <i class="la la-star"></i>
-                            </span>
-                            </div><!-- end testimonial__name -->
-                            <div class="testimonial__desc">
-                                <p class="testimonial__desc-desc">
-                                    The best part about Aduca is the selection.
-                                    You can find a course for anything you want to learn!
-                                    really Aduca i closed with you.
-                                </p>
-                            </div><!-- end testimonial__desc -->
-                        </div><!-- end testimonial-item -->
+                        </div>
+                        @endforeach
+
                     </div><!-- end testimonial-wrap -->
                 </div><!-- end col-md-12 -->
             </div><!-- end row -->
@@ -448,7 +391,7 @@
                             </div><!-- end blog-post-img -->
                             <div class="post-body">
                                 <div class="blog-title">
-                                    <a href="" class="blog__title">
+                                    <a href="{{route('user.blog.details',['slug'=>$lBlog->slug])}}" class="blog__title">
                                         {{\Illuminate\Support\Str::limit($lBlog->title,65,'..')}}
                                     </a>
                                 </div>

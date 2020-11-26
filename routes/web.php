@@ -35,6 +35,7 @@ Route::namespace('Frontend')->group(function (){
     });
     Route::get('blog','HomeController@blog')->name('user.blog');
     Route::get('blog/category/{id}','HomeController@category')->name('user.blog.category');
+    Route::get('blog/details/{slug}','HomeController@blogDetails')->name('user.blog.details');
 
     //Basic Section
     Route::get('about','HomeController@about')->name('user.about');
@@ -45,6 +46,7 @@ Route::namespace('Frontend')->group(function (){
     Route::get('event-campaign','HomeController@eventCampaign')->name('user.event');
     Route::get('event-campaign/details/{slug}','HomeController@eventDetails')->name('user.event.detail');
     Route::get('upload-document','HomeController@uploadDocument')->name('user.document.upload');
+    Route::get('video-gallery','HomeController@videoGallery')->name('user.video.gallery');
 });
 
 
@@ -157,6 +159,30 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         Route::get('{id}/edit','EventController@edit')->name('admin.event.edit');
         Route::put('{id}/update','EventController@update')->name('admin.event.update');
     });
+    //For Media Section
+    Route::prefix('media')->group(function (){
+        //For Video Gallery
+        Route::prefix('video-gallery')->group(function (){
+            Route::get('index','VideoController@index')->name('admin.video.index');
+            Route::get('create','VideoController@create')->name('admin.video.create');
+            Route::post('store','VideoController@store')->name('admin.video.store');
+            Route::get('delete/{id}','VideoController@delete')->name('admin.video.delete');
+            Route::get('{id}/edit','VideoController@edit')->name('admin.video.edit');
+            Route::put('{id}/update','VideoController@update')->name('admin.video.update');
+        });
+    });
+
+    Route::prefix('single-component')->group(function (){
+        Route::prefix('success-story')->group(function (){
+            Route::get('index','SuccessStoryController@index')->name('admin.story.index');
+            Route::get('create','SuccessStoryController@create')->name('admin.story.create');
+            Route::post('store','SuccessStoryController@store')->name('admin.story.store');
+            Route::get('delete/{id}','SuccessStoryController@delete')->name('admin.story.delete');
+            Route::get('{id}/edit','SuccessStoryController@edit')->name('admin.story.edit');
+            Route::put('{id}/update','SuccessStoryController@update')->name('admin.story.update');
+        });
+    });
+
     //Admin Login
     Route::get('/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\LoginController@login');
