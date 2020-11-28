@@ -174,6 +174,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     });
 
     Route::prefix('single-component')->group(function (){
+        //For Success Story
         Route::prefix('success-story')->group(function (){
             Route::get('index','SuccessStoryController@index')->name('admin.story.index');
             Route::get('create','SuccessStoryController@create')->name('admin.story.create');
@@ -182,6 +183,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
             Route::get('{id}/edit','SuccessStoryController@edit')->name('admin.story.edit');
             Route::put('{id}/update','SuccessStoryController@update')->name('admin.story.update');
         });
+        //For Slider
         Route::prefix('slider')->group(function (){
             Route::get('index','SliderController@index')->name('admin.slider.index');
             Route::get('create','SliderController@create')->name('admin.slider.create');
@@ -189,6 +191,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
             Route::get('delete/{id}','SliderController@delete')->name('admin.slider.delete');
             Route::get('{id}/edit','SliderController@edit')->name('admin.slider.edit');
             Route::put('{id}/update','SliderController@update')->name('admin.slider.update');
+        });
+        //For photo Gallery
+        Route::prefix('photo-gallery')->group(function (){
+            Route::get('index','PhotoGalleryController@index')->name('admin.photo.gallery.index');
+            Route::get('create','PhotoGalleryController@create')->name('admin.photo.gallery.create');
+            Route::post('store','PhotoGalleryController@store')->name('admin.photo.gallery.store');
+            Route::get('delete/{id}','PhotoGalleryController@delete')->name('admin.photo.gallery.delete');
+            Route::get('{id}/edit','PhotoGalleryController@edit')->name('admin.photo.gallery.edit');
+            Route::put('{id}/update','PhotoGalleryController@update')->name('admin.photo.gallery.update');
         });
     });
     //Admin Login

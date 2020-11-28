@@ -200,9 +200,13 @@
                                     <span class="nav-text">Index</span>
                                 </a>
                             </li>
+                            <li class="@if($currentRouteName === 'admin.event.create') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.event.create')}}">
+                                    <span class="nav-text">Add Event</span>
+                                </a>
+                            </li>
                         </div>
                     </ul>
-
                 </li>
                 <li>
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#media"
@@ -216,6 +220,11 @@
                             <li class="@if($currentRouteName === 'admin.video.index') active @endif">
                                 <a class="sidenav-item-link" href="{{route('admin.video.index')}}">
                                     <span class="nav-text">Video Index</span>
+                                </a>
+                            </li>
+                            <li class="@if($currentRouteName === 'admin.video.create') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.video.create')}}">
+                                    <span class="nav-text">Add Video</span>
                                 </a>
                             </li>
                         </div>

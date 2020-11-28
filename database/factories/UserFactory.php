@@ -25,3 +25,8 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
     ];
 });
+//$factory->define(\App\Model\Admin\PhotoGalleryYear::class,function (Faker $faker){
+//    return [
+//      'name'=>$faker->year($max = 'now')
+//    ];
+//});

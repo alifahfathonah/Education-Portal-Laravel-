@@ -2,11 +2,12 @@
 @section('main-content')
     <div class="card card-default">
         <div class="card-header card-header-border-bottom d-flex justify-content-between">
-            <h2>Skill Development</h2>
-            <a href="{{route('admin.skill.create')}}" class="btn btn-outline-primary btn-sm text-uppercase">
-                <i class="fa fa-plus"></i> Add Skill
+            <h2>Photo Gallery</h2>
+            <a href="{{route('admin.photo.gallery.create')}}" class="btn btn-outline-primary btn-sm text-uppercase">
+                <i class="fa fa-plus"></i> Add Photo
             </a>
         </div>
+
         <div class="card-body">
             <div class="hoverable-data-table">
                 <table id="hoverable-data-table" class="table table-hover nowrap" style="width:100%">
@@ -15,7 +16,7 @@
                         <th>SL</th>
                         <th>Title</th>
                         <th>Image</th>
-                        <th>Category</th>
+                        <th>Year</th>
                         <th>Status</th>
                         <th>Created By</th>
                         <th>Updated By</th>
@@ -23,40 +24,40 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($skills as $skill)
+                    @foreach($photos as $photo)
                         <tr>
                             <td>@if($loop->index + 1 <10){{'0'.($loop->index+1)}}@endif @if($loop->index + 1 > 9){{($loop->index+1)}}@endif</td>
-                            <td>{{$skill->title}}</td>
-                            <td><img style="max-width: 50px;height: auto;" src="{{url('uploads/skill/thumb/'.$skill->thumb)}}" alt=""></td>
-                            <td>{{$skill->category}}</td>
-                            <td>@if ($skill->status == 1) <span class="mb-2 mr-2 badge badge-success">Active</span>@elseif($skill->status == 0)<span class="mb-2 mr-2 badge badge-warning"> Inactive </span> @else <span class="mb-2 mr-2 badge badge-danger"> Unknown </span>@endif</td>
+                            <td>{{$photo->title}}</td>
+                            <td><img style="max-width: 100px;height: auto;" src="{{url('uploads/gallery/thumb/'.$photo->thumb)}}" alt=""></td>
+                            <td>{{$photo->photoGalleryYears ? $photo->photoGalleryYears->name : 'NUll'}}</td>
+                            <td>@if ($photo->status == 1) <span class="mb-2 mr-2 badge badge-success">Active</span>@elseif($photo->status == 0)<span class="mb-2 mr-2 badge badge-warning"> Inactive </span> @else <span class="mb-2 mr-2 badge badge-danger"> Unknown </span>@endif</td>
                             <td>
-                                @if($skill->created_by === null)
+                                @if($photo->created_by === null)
                                     {{__('Null')}}
                                 @else
                                     @foreach($admins as $admin)
-                                        @if($skill->created_by == $admin->id)
-                                        {{$admin->name}}
-                                        @endif
-                                    @endforeach
-                                @endif
-                            </td>
-                            <td>
-                                @if($skill->updated_by === null)
-                                    {{__('Null')}}
-                                @else
-                                    @foreach($admins as $admin)
-                                        @if($skill->updated_by == $admin->id)
+                                        @if($photo->created_by == $admin->id)
                                             {{$admin->name}}
                                         @endif
                                     @endforeach
                                 @endif
                             </td>
                             <td>
-                                <a data-toggle="tooltip" title="Edit" href="{{route('admin.skill.edit',['id'=>$skill->id])}}" class="btn btn-sm btn-primary">
+                                @if($photo->updated_by === null)
+                                    {{__('Null')}}
+                                @else
+                                    @foreach($admins as $admin)
+                                        @if($photo->updated_by == $admin->id)
+                                            {{$admin->name}}
+                                        @endif
+                                    @endforeach
+                                @endif
+                            </td>
+                            <td>
+                                <a data-toggle="tooltip" title="Edit" href="{{route('admin.photo.gallery.edit',['id'=>$photo->id])}}" class="btn btn-sm btn-primary">
                                     <i class="fa fa-edit"></i>
                                 </a>
-                                <a  data-toggle="tooltip" title="Trash" href="{{route('admin.skill.delete',['id'=>$skill->id])}}" class="btn btn-sm btn-danger delete">
+                                <a  data-toggle="tooltip" title="Trash" href="{{route('admin.photo.gallery.delete',['id'=>$photo->id])}}" class="btn btn-sm btn-danger delete">
                                     <i class="fa fa-trash"></i>
                                 </a>
                             </td>
