@@ -13,7 +13,7 @@
                             <h2>Upload Your Document</h2>
                         </div>
                         <div class="section-content">
-                            <form action="" method="post" enctype="multipart/form-data">
+                            <form action="{{route('user.document.store')}}" method="post" enctype="multipart/form-data">@csrf
                                 <div class="form-group">
                                     <label for="title">Document Title</label>
                                     <input type="text" class="form-control" id="title">

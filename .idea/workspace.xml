@@ -11,35 +11,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="407f3d8c-4f46-4f0d-adb9-fca67e672a7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SuccessStoryController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/VideoController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Admin/SuccessStory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Admin/Video.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_26_090017_create_videos_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_26_105630_create_success_stories_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/blog/main/Blog_1606370146_Screenshot_9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/blog/thumb/Blog_thumb_1606370146_Screenshot_9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/story/main/Story_main_1606390145_219_05_busbusiness_interviewHeader_1485x1254.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/story/main/Story_main_1606390575_220px-Dwayne_Johnson_at_the_2009_Tribeca_Film_Festival.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/story/main/Story_main_1606390648_summer-2020-men-casual.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/story/main/Story_main_1606391665_Joe_B2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/media/video/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/media/video/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/media/video/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/single/story/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/single/story/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/single/story/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/basic/video-gallery.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/blog/category_blog.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SliderController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Admin/Slider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Admin/SliderPriority.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_28_063456_create_sliders_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_28_071146_create_slider_priorities_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/asset/images/preloader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/partner/main/Partner_main_1606542864_sponsor-img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/partner/main/Partner_main_1606542923_sponsor-img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/partner/main/Partner_main_1606542944_sponsor-img2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/partner/main/Partner_main_1606542959_sponsor-img3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/partner/main/Partner_main_1606542983_sponsor-img4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/partner/main/Partner_main_1606543002_sponsor-img5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/slider/main/Sliderr_main_1606548999_slider-img2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/slider/main/Sliderr_main_1606556124_slider-img3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/slider/main/Sliderr_main_1606557189_slider-img1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/slider/main/Sliderr_main_1606560279_about-breadcrumb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/single/slider/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/single/slider/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/single/slider/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/asset/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/asset/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/asset/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/asset/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/inc/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/inc/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/blog/blog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/blog/blog.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/blog/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/blog/details.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/inc/home-menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/inc/home-menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/partner/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partner/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/basic/upload-document.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/basic/upload-document.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/tips_and_tricks/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/tips_and_tricks/details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/homeapp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/homeapp.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/innerapp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/innerapp.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -218,6 +219,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
@@ -226,7 +228,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/team/team_panel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/frontend/asset/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -234,20 +236,22 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\blogs\app\Http\Controllers\Admin" />
-      <recent name="C:\xampp\htdocs\blogs\app" />
-      <recent name="C:\xampp\htdocs\blogs\app\Model\User" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Laravel-Blog-with-Admin-Panel\public\frontend\asset\images" />
       <recent name="C:\xampp\htdocs\Laravel-Blog-with-Admin-Panel\resources\views\admin\team\team_panel" />
       <recent name="C:\xampp\htdocs\blogs\resources\views\admin\users" />
       <recent name="C:\xampp\htdocs\blogs\resources\views\admin\permission" />
       <recent name="C:\xampp\htdocs\blogs\resources\views\admin\role" />
-      <recent name="C:\xampp\htdocs\blogs\app\Http\Controllers\Admin\Auth" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Laravel-Blog-with-Admin-Panel\app\Model\Admin" />
+      <recent name="C:\xampp\htdocs\blogs\app\Http\Controllers\Admin" />
+      <recent name="C:\xampp\htdocs\blogs\app" />
+      <recent name="C:\xampp\htdocs\blogs\app\Model\User" />
     </key>
   </component>
   <component name="RunManager">
@@ -336,7 +340,9 @@
       <workItem from="1606281347824" duration="5875000" />
       <workItem from="1606294359182" duration="378000" />
       <workItem from="1606295420471" duration="11611000" />
-      <workItem from="1606366693334" duration="17367000" />
+      <workItem from="1606366693334" duration="17928000" />
+      <workItem from="1606537880987" duration="908000" />
+      <workItem from="1606539451740" duration="14752000" />
     </task>
     <servers />
   </component>
@@ -371,10 +377,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606391452587" />
-    <state x="532" y="274" key="Create Controller" timestamp="1606388369473">
+    <state x="532" y="274" key="Create Controller" timestamp="1606545178570">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="532" y="274" key="Create Controller/0.0.1366.728@0.0.1366.728" timestamp="1606388369473" />
+    <state x="532" y="274" key="Create Controller/0.0.1366.728@0.0.1366.728" timestamp="1606545178570" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1606201226862">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -395,17 +401,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1606302174158" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606391839681">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606545998997">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606391839681" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606545998997" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/frontend/layouts/homeapp.blade.php</url>
-          <line>112</line>
+          <line>118</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

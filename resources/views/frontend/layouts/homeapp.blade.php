@@ -28,6 +28,12 @@
     <!-- end inject -->
 </head>
 <body>
+<div id="preloader">
+    <div id="status">
+    </div>
+</div>
+
+
 
 <!--======================================
         START HEADER AREA
@@ -179,21 +185,14 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="client-logo">
-                    <div class="client-logo-item">
-                        <a href="#"><img src="{{asset('frontend/asset/images/sponsor-img.png')}}" alt="brand image"></a>
-                    </div><!-- end client-logo-item -->
-                    <div class="client-logo-item">
-                        <a href="#"><img src="{{asset('frontend/asset/images/sponsor-img2.png')}}" alt="brand image"></a>
-                    </div><!-- end client-logo-item -->
-                    <div class="client-logo-item">
-                        <a href="#"><img src="{{asset('frontend/asset/images/sponsor-img3.png')}}" alt="brand image"></a>
-                    </div><!-- end client-logo-item -->
-                    <div class="client-logo-item">
-                        <a href="#"><img src="{{asset('frontend/asset/images/sponsor-img4.png')}}" alt="brand image"></a>
-                    </div><!-- end client-logo-item -->
-                    <div class="client-logo-item">
-                        <a href="#"><img src="{{asset('frontend/asset/images/sponsor-img5.png')}}" alt="brand image"></a>
-                    </div><!-- end client-logo-item -->
+                    @foreach($partners as $partner)
+                        @if((int)$partner->status === 1)
+                        <div class="client-logo-item">
+                            <a href="{{$partner->url}}"><img src="{{url('uploads/partner/main/'.$partner->logo)}}" alt="brand image"></a>
+                        </div><!-- end client-logo-item -->
+                        @endif
+                    @endforeach
+
                 </div><!-- end client-logo -->
             </div><!-- end col-lg-12 -->
         </div><!-- end row -->
@@ -204,9 +203,6 @@
         <span class="stroke__line"></span>
     </div>
 </section><!-- end clientlogo-area -->
-
-
-
 <section class="footer-area">
     <div class="ocean">
         <div class="wave"></div>
@@ -306,8 +302,13 @@
 <script src="{{asset('frontend/asset/js/wow.js')}}"></script>
 <script src="{{asset('frontend/asset/js/smooth-scrolling.js')}}"></script>
 <script src="{{asset('frontend/asset/js/main.js')}}"></script>
-
-
+<script    type="text/javascript">
+    $(window).on('load',function() { // makes sure the whole site is loaded
+        $('#status').fadeOut(); // will first fade out the loading animation
+        $('#preloader').delay(50).fadeOut(100); // will fade out the white DIV that covers the website.
+        $('body').delay(50).css({'overflow':'visible'});
+    })
+</script>
 </body>
 
 </html>

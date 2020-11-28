@@ -200,13 +200,9 @@
                                     <span class="nav-text">Index</span>
                                 </a>
                             </li>
-                            <li class="@if($currentRouteName === 'admin.event.create') active @endif">
-                                <a class="sidenav-item-link" href="{{route('admin.event.create')}}">
-                                    <span class="nav-text">Add Event</span>
-                                </a>
-                            </li>
                         </div>
                     </ul>
+
                 </li>
                 <li>
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#media"
@@ -231,12 +227,18 @@
                         <i class="mdi mdi-view-dashboard-outline"></i>
                         <span class="nav-text">Single Component</span> <b class="caret"></b>
                     </a>
-                    <ul  class="collapse @if($prefix === 'admin/single-component/success-story') show @endif"  id="single"
+
+                    <ul  class="collapse @if($prefix === 'admin/single-component/success-story') show @endif @if($prefix === 'admin/single-component/slider') show @endif"  id="single"
                          data-parent="#sidebar-menu">
                         <div class="sub-menu">
                             <li class="@if($currentRouteName === 'admin.story.index') active @endif">
                                 <a class="sidenav-item-link" href="{{route('admin.story.index')}}">
                                     <span class="nav-text">Success Story</span>
+                                </a>
+                            </li>
+                            <li class="@if($currentRouteName === 'admin.slider.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.slider.index')}}">
+                                    <span class="nav-text">Slider</span>
                                 </a>
                             </li>
                         </div>

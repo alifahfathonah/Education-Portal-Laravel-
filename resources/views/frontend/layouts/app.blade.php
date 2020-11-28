@@ -29,6 +29,10 @@
     <!-- end inject -->
 </head>
 <body>
+<div id="preloader">
+    <div id="status">
+    </div>
+</div>
 
 <!--======================================
         START HEADER AREA
@@ -408,6 +412,13 @@
 <script src="{{asset('frontend/asset/js/wow.js')}}"></script>
 <script src="{{asset('frontend/asset/js/smooth-scrolling.js')}}"></script>
 <script src="{{asset('frontend/asset/js/main.js')}}"></script>
+<script    type="text/javascript">
+    $(window).on('load',function() { // makes sure the whole site is loaded
+        $('#status').fadeOut(); // will first fade out the loading animation
+        $('#preloader').delay(50).fadeOut(100); // will fade out the white DIV that covers the website.
+        $('body').delay(50).css({'overflow':'visible'});
+    })
+</script>
 @yield('js')
 
 

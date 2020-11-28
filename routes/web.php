@@ -45,7 +45,8 @@ Route::namespace('Frontend')->group(function (){
     Route::get('blood-donation','HomeController@bloodDonation')->name('user.blood.donation');
     Route::get('event-campaign','HomeController@eventCampaign')->name('user.event');
     Route::get('event-campaign/details/{slug}','HomeController@eventDetails')->name('user.event.detail');
-    Route::get('upload-document','HomeController@uploadDocument')->name('user.document.upload');
+    Route::get('upload-document','HomeController@uploadDocument')->name('user.document.upload')->middleware('auth:web');
+    Route::post('trying-upload','HomeController@tryingUpload')->name('user.document.store')->middleware('auth:web');
     Route::get('video-gallery','HomeController@videoGallery')->name('user.video.gallery');
 });
 
@@ -181,8 +182,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
             Route::get('{id}/edit','SuccessStoryController@edit')->name('admin.story.edit');
             Route::put('{id}/update','SuccessStoryController@update')->name('admin.story.update');
         });
+        Route::prefix('slider')->group(function (){
+            Route::get('index','SliderController@index')->name('admin.slider.index');
+            Route::get('create','SliderController@create')->name('admin.slider.create');
+            Route::post('store','SliderController@store')->name('admin.slider.store');
+            Route::get('delete/{id}','SliderController@delete')->name('admin.slider.delete');
+            Route::get('{id}/edit','SliderController@edit')->name('admin.slider.edit');
+            Route::put('{id}/update','SliderController@update')->name('admin.slider.update');
+        });
     });
-
     //Admin Login
     Route::get('/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\LoginController@login');

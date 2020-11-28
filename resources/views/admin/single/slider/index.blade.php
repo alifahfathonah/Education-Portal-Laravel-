@@ -2,11 +2,12 @@
 @section('main-content')
     <div class="card card-default">
         <div class="card-header card-header-border-bottom d-flex justify-content-between">
-            <h2>Partners</h2>
-
-            <a href="{{route('admin.partner.create')}}" class="btn btn-outline-primary btn-sm text-uppercase">
-                <i class="fa fa-plus"></i> Add Partner
-            </a>
+            <h2>Slider</h2>
+            @if(count($sliders) <= \App\Model\Admin\SliderPriority::count())
+                <a href="{{route('admin.slider.create')}}" class="btn btn-outline-primary btn-sm text-uppercase">
+                    <i class="fa fa-plus"></i> Add Slider
+                </a>
+            @endif
         </div>
 
         <div class="card-body">
@@ -17,7 +18,7 @@
                         <th>SL</th>
                         <th>Title</th>
                         <th>Image</th>
-                        <th>Url</th>
+                        <th>Priority</th>
                         <th>Status</th>
                         <th>Created By</th>
                         <th>Updated By</th>
@@ -25,40 +26,40 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($partners as $partner)
+                    @foreach($sliders as $slider)
                         <tr>
                             <td>@if($loop->index + 1 <10){{'0'.($loop->index+1)}}@endif @if($loop->index + 1 > 9){{($loop->index+1)}}@endif</td>
-                            <td>{{$partner->title}}</td>
-                            <td><img style="max-width: 50px;height: auto;" src="{{url('uploads/partner/main/'.$partner->logo)}}" alt=""></td>
-                            <td>{{$partner->url}}</td>
-                            <td>@if ($partner->status == 1) <span class="mb-2 mr-2 badge badge-success">Active</span>@elseif($partner->status == 0)<span class="mb-2 mr-2 badge badge-warning"> Inactive </span> @else <span class="mb-2 mr-2 badge badge-danger"> Unknown </span>@endif</td>
+                            <td>{{$slider->title}}</td>
+                            <td><img style="max-width: 50px;height: auto;" src="{{url('uploads/slider/main/'.$slider->image)}}" alt=""></td>
+                            <td>{{$slider->sliderPriorities ? $slider->sliderPriorities->title:'Null'}}</td>
+                            <td>@if ($slider->status == 1) <span class="mb-2 mr-2 badge badge-success">Active</span>@elseif($slider->status == 0)<span class="mb-2 mr-2 badge badge-warning"> Inactive </span> @else <span class="mb-2 mr-2 badge badge-danger"> Unknown </span>@endif</td>
                             <td>
-                                @if($partner->created_by === null)
+                                @if($slider->created_by === null)
                                     {{__('Null')}}
                                 @else
                                     @foreach($admins as $admin)
-                                        @if($partner->created_by == $admin->id)
+                                        @if($slider->created_by == $admin->id)
                                             {{$admin->name}}
                                         @endif
                                     @endforeach
                                 @endif
                             </td>
                             <td>
-                                @if($partner->updated_by === null)
+                                @if($slider->updated_by === null)
                                     {{__('Null')}}
                                 @else
                                     @foreach($admins as $admin)
-                                        @if($partner->updated_by == $admin->id)
+                                        @if($slider->updated_by == $admin->id)
                                             {{$admin->name}}
                                         @endif
                                     @endforeach
                                 @endif
                             </td>
                             <td>
-                                <a data-toggle="tooltip" title="Edit" href="{{route('admin.partner.edit',['id'=>$partner->id])}}" class="btn btn-sm btn-primary">
+                                <a data-toggle="tooltip" title="Edit" href="{{route('admin.slider.edit',['id'=>$slider->id])}}" class="btn btn-sm btn-primary">
                                     <i class="fa fa-edit"></i>
                                 </a>
-                                <a  data-toggle="tooltip" title="Trash" href="{{route('admin.partner.delete',['id'=>$partner->id])}}" class="btn btn-sm btn-danger delete">
+                                <a  data-toggle="tooltip" title="Trash" href="{{route('admin.slider.delete',['id'=>$slider->id])}}" class="btn btn-sm btn-danger delete">
                                     <i class="fa fa-trash"></i>
                                 </a>
                             </td>

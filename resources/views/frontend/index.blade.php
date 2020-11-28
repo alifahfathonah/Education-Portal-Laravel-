@@ -2,12 +2,10 @@
 @section('main-content')
     <section class="slider-area">
         <div class="homepage-slide1">
-            <div class="single-slide-item slide-bg1">
+            @foreach($sliders as $slider)
+            <div class="single-slide-item slide-bg1" style="background-image: url({{url('uploads/slider/main/'.$slider->image)}})">
             </div><!-- end single-slide-item -->
-            <div class="single-slide-item slide-bg2">
-            </div><!-- end single-slide-item -->
-            <div class="single-slide-item slide-bg3">
-            </div><!-- end single-slide-item -->
+            @endforeach
         </div><!-- end homepage-slides -->
     </section><!-- end slider-area -->
 
@@ -132,7 +130,7 @@
                                 <i class="fa fa-trophy"></i>
                             </div>
                             <div class="text">
-                                <h2 class="counter">980</h2>
+                                <h2 class="counter">129</h2>
                             </div>
                             <div class="heading">
                                 <p>SUCCESS CAMPAIGN</p>
@@ -149,7 +147,7 @@
                                 <i class="fa fa-book"></i>
                             </div>
                             <div class="text">
-                                <h2 class="counter">200</h2>
+                                <h2 class="counter">115</h2>
                             </div>
                             <div class="heading">
                                 <p>CAMPAIGN RUNNING</p>
@@ -232,7 +230,7 @@
                     <div class="card p-0 shadow-sm border-0">
                         <div class="card-body">
                             <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="{{$videos[0]->link}}"></iframe>
+                                <iframe class="embed-responsive-item" allowfullscreen src="{{$videos[0]->link}}"></iframe>
                             </div>
                             <h6 class="mt-3">{{$videos[0]->title}}</h6>
                         </div>
@@ -244,7 +242,7 @@
                             <div class="card mb-3 border-0 shadow-sm">
                         <div class="row no-gutters">
                             <div class="col-md-4">
-                                <iframe class="embed-responsive-item" src="{{$video->link}}" width="190" height="108"></iframe>
+                                <iframe class="embed-responsive-item" src="{{$video->link}}" width="190" height="108"  allowfullscreen></iframe>
                             </div>
                             <div class="col-md-8 align-self-center">
                                 <div class="card-body">
@@ -361,7 +359,6 @@
                             </div><!-- end testimonial__desc -->
                         </div>
                         @endforeach
-
                     </div><!-- end testimonial-wrap -->
                 </div><!-- end col-md-12 -->
             </div><!-- end row -->
