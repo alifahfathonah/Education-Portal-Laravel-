@@ -64,8 +64,9 @@
                                 </div><!-- end col-md-12 -->
                                 <div class="col-lg-12 col-sm-12">
                                     <div class="form-group">
-                                        <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="Email Address" value="{{old('email')}}">
+                                        <input id="email" class="form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="Email Address" value="{{old('email')}}">
                                         <span class="la la-envelope-o input-icon"></span>
+                                        <span class="loading-icon fa fa-spinner fa-spin hides"></span>
                                         @error('email')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
                                     </div>
                                 </div><!-- end col-md-12 -->
@@ -112,8 +113,81 @@
     <!-- ================================
            START FORM AREA
     ================================= -->
+    <style>
+        .loading-icon{
+            position: absolute;
+            right: 10px;
+            top: 20px;
+            color: #EE5222;
+        }
+        .hides{
+            visibility: hidden;
+        }
+        .shows{
+            visibility: visible;
+        }
+
+    </style>
 @endsection
 @section('js')
     <script src="{{asset('frontend/asset/js/countries.js')}}"></script>
     <script src="{{asset('frontend/asset/js/custom.js')}}"></script>
+    <script>
+        $(document).ready(function (){
+            $(document).on('blur','#email',function (){
+                $('#email').closest('div').children('span.loading-icon').removeClass('hides');
+                $('#email').closest('div').children('span.loading-icon').addClass('shows');
+                var valueEmail = $(this).val();
+                if (!valueEmail){
+                    $('#email').closest('div').children('span.loading-icon').addClass('hides');
+                    $('#email').closest('div').children('span.loading-icon').removeClass('shows');
+                    removePreviousLog();
+                } else{
+                    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                    if (!filter.test(valueEmail)){
+                        removePreviousLog();
+                        $('#email').closest('input').addClass('is-invalid');
+                        $('#email').closest('div').append('<span class="invalid-feedback"><strong>Please enter correct email.</strong></span>');
+                    }else{
+                        $.ajax({
+                            url:'{{route('user.attempt.register')}}',
+                            method:'POST',
+                            data:{'_token':'{{csrf_token()}}','email':valueEmail},
+                            success:function (data){
+                                if (data === true){
+                                    removePreviousLog();
+                                    $('#email').closest('input').addClass('is-invalid');
+                                    $('#email').closest('div').append('<span class="invalid-feedback"><strong>This email already exists.</strong></span>');
+
+                                    $('#email').closest('div').children('span.loading-icon').addClass('hides');
+                                    $('#email').closest('div').children('span.loading-icon').removeClass('shows');
+
+                                }else{
+                                    removePreviousLog();
+                                    $('#email').css('border-color','green');
+                                    $('#email').closest('input').addClass('is-valid');
+                                    $('#email').closest('div').append('<span class="valid-feedback"><strong>This email is valid for registration.</strong></span>');
+
+                                    $('#email').closest('div').children('span.loading-icon').addClass('hides');
+                                    $('#email').closest('div').children('span.loading-icon').removeClass('shows');
+                                }
+                            }
+                        });
+                    }
+
+                }
+            });
+        });
+        function removePreviousLog(){
+            $('#email').closest('input').removeClass('is-invalid');
+            $('#email').closest('div').children('span.invalid-feedback').remove();
+
+            $('#email').closest('input').removeClass('is-valid');
+            $('#email').closest('div').children('span.valid-feedback').remove();
+            $('#email').css('border-color','rgba(127, 136, 151, 0.2)');
+
+        }
+
+
+    </script>
 @endsection

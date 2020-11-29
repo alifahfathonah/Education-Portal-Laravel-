@@ -16,6 +16,7 @@ use App\Model\Admin\TeamPanelName;
 use App\Model\Admin\Tips;
 use App\Model\Admin\Video;
 use App\Model\Frontend\Contact;
+use App\User;
 use Carbon\Carbon;
 use http\Message;
 use Illuminate\Http\Request;
@@ -316,5 +317,25 @@ class HomeController extends Controller
                 'videos'=>$videos,
                 'partners'=>Partner::all()
             ]);
+    }
+
+    public function validUser(Request $request)
+    {
+        $email = User::where('email',$request->email)->first();
+        if ($email){
+            return response()->json(true);
+        }else{
+            return response()->json(false);
+        }
+    }
+
+    public function attemptRegisterValidation(Request $request)
+    {
+        $email = User::where('email',$request->email)->first();
+        if ($email){
+            return response()->json(true);
+        }else{
+            return response()->json(false);
+        }
     }
 }

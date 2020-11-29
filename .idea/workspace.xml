@@ -11,23 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="407f3d8c-4f46-4f0d-adb9-fca67e672a7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PhotoGalleryController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Admin/PhotoGallery.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Admin/PhotoGalleryYear.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_28_105828_create_photo_galleries_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_28_110207_create_photo_gallery_years_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/main/Gallery_main_1606565091_img6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/main/Gallery_main_1606565108_gallery1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/thumb/Gallery_thumb_1606565091_img6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/thumb/Gallery_thumb_1606565108_gallery1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/single/photo_gallery/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/single/photo_gallery/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/single/photo_gallery/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/blogs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blogs.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/inc/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/inc/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/skill/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/skill/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -329,7 +319,8 @@
       <workItem from="1606295420471" duration="11611000" />
       <workItem from="1606366693334" duration="17928000" />
       <workItem from="1606537880987" duration="908000" />
-      <workItem from="1606539451740" duration="20431000" />
+      <workItem from="1606539451740" duration="21012000" />
+      <workItem from="1606629282199" duration="10505000" />
     </task>
     <servers />
   </component>

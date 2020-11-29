@@ -48,6 +48,9 @@ Route::namespace('Frontend')->group(function (){
     Route::get('upload-document','HomeController@uploadDocument')->name('user.document.upload')->middleware('auth:web');
     Route::post('trying-upload','HomeController@tryingUpload')->name('user.document.store')->middleware('auth:web');
     Route::get('video-gallery','HomeController@videoGallery')->name('user.video.gallery');
+
+    Route::post('user-validation','HomeController@validUser')->name('user.valid');
+    Route::post('attempt-register-validation','HomeController@attemptRegisterValidation')->name('user.attempt.register');
 });
 
 
