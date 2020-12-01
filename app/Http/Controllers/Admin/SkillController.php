@@ -8,7 +8,7 @@ use App\Model\Admin\Skill;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class SkillController extends Controller
+class SkillController extends Controller implements ComponentCRUD
 {
     //Access Security via Middleware and Guard
     public function __construct()

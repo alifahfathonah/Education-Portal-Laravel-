@@ -205,6 +205,20 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
             Route::put('{id}/update','PhotoGalleryController@update')->name('admin.photo.gallery.update');
         });
     });
+
+    Route::prefix('our-activity')->group(function(){
+        //Activity NAME
+        Route::prefix('activity')->group(function (){
+            Route::get('index','ActivityController@index')->name('admin.activity.index');
+            Route::get('create','ActivityController@create')->name('admin.activity.create');
+            Route::post('store','ActivityController@store')->name('admin.activity.store');
+            Route::get('delete/{id}','ActivityController@delete')->name('admin.activity.delete');
+            Route::get('{id}/edit','ActivityController@edit')->name('admin.activity.edit');
+            Route::put('{id}/update','ActivityController@update')->name('admin.activity.update');
+        });
+    });
+
+
     //Admin Login
     Route::get('/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\LoginController@login');

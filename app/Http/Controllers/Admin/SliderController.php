@@ -8,7 +8,7 @@ use App\Model\Admin\Slider;
 use App\Model\Admin\SliderPriority;
 use Illuminate\Http\Request;
 
-class SliderController extends Controller
+class SliderController extends Controller implements ComponentCRUD
 {
     public function __construct()
     {

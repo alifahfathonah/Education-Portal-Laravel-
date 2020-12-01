@@ -7,7 +7,7 @@ use App\Model\Admin\Admin;
 use App\Model\Admin\TeamPanelName;
 use Illuminate\Http\Request;
 
-class TeamPanelNameController extends Controller
+class TeamPanelNameController extends Controller implements ComponentCRUD
 {
     public function __construct()
     {

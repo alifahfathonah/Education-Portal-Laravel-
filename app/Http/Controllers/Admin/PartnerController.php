@@ -8,7 +8,7 @@ use App\Model\Admin\Partner;
 use Illuminate\Http\Request;
 use function React\Promise\all;
 
-class PartnerController extends Controller
+class PartnerController extends Controller implements ComponentCRUD
 {
     public function __construct()
     {

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 
-class EventController extends Controller
+class EventController extends Controller implements ComponentCRUD
 {
     public function __construct()
     {
@@ -39,7 +39,7 @@ class EventController extends Controller
             'short_title'=>['required','max:30'],
             'start_date'=>['required','date'],
             'end_date'=>['required','date'],
-            'image'=>['required','mimes:jpeg,bmp,png,jpg','max:2048'],
+            'image'=>['required','mimes:jpeg,png,bmp,jpg','max:2048'],
             'description'=>['required']
         ]);
         //Image and Thumb upload and resize

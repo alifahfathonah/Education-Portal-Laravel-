@@ -7,7 +7,7 @@ use App\Model\Admin\Admin;
 use App\Model\Admin\Video;
 use Illuminate\Http\Request;
 
-class VideoController extends Controller
+class VideoController extends Controller implements ComponentCRUD
 {
     public function __construct()
     {
@@ -23,7 +23,6 @@ class VideoController extends Controller
                 'admins'=>Admin::all()
             ]);
     }
-
     public function create()
     {
         return view('admin.media.video.create');

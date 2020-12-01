@@ -9,7 +9,7 @@ use App\Model\Admin\Tips;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class TipsController extends Controller
+class TipsController extends Controller implements ComponentCRUD
 {
     //Access Security via Middleware and Guard
     public function __construct()

@@ -7,7 +7,7 @@ use App\Model\Admin\Admin;
 use App\Model\Admin\SuccessStory;
 use Illuminate\Http\Request;
 
-class SuccessStoryController extends Controller
+class SuccessStoryController extends Controller implements ComponentCRUD
 {
     public function __construct()
     {

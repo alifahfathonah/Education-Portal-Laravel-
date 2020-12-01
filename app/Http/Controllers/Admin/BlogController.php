@@ -9,7 +9,7 @@ use App\Model\Admin\BlogCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class BlogController extends Controller
+class BlogController extends Controller implements ComponentCRUD
 {
     public function __construct()
     {

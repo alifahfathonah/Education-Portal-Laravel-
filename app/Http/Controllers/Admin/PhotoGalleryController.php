@@ -8,7 +8,7 @@ use App\Model\Admin\PhotoGallery;
 use App\Model\Admin\PhotoGalleryYear;
 use Illuminate\Http\Request;
 
-class PhotoGalleryController extends Controller
+class PhotoGalleryController extends Controller implements ComponentCRUD
 {
     public function __construct()
     {

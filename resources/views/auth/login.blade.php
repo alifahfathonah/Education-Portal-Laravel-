@@ -108,7 +108,6 @@
 
                                     $('#email').closest('div').children('span.loading-icon').addClass('hides');
                                     $('#email').closest('div').children('span.loading-icon').removeClass('shows');
-
                                 }else{
                                     removePreviousLog();
                                     $('#email').closest('input').addClass('is-invalid');
@@ -120,7 +119,6 @@
                             }
                         });
                     }
-
                 }
             });
         });
