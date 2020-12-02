@@ -11,33 +11,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="407f3d8c-4f46-4f0d-adb9-fca67e672a7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ActivityController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ComponentCRUD.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Admin/Activity.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_01_105432_create_activities_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/our_activity/activity/main/Activity_main_1606825110_global.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/skill/main/Skill_1606727921_121183785_188683389416203_2725860840445369757_n.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/skill/thumb/Skill_thumb_1606727921_121183785_188683389416203_2725860840445369757_n.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/our-activity/activity/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/our-activity/activity/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/our-activity/activity/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/our-activity/panel-name/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/our-activity/panel-name/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/our-activity/panel-name/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ActivityPanelController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Admin/ActivityPanel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Admin/ActivityPost.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_02_064300_create_activity_panels_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_02_073746_create_activity_posts_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_02_104837_create_activity_panel_activity_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/our_activity/activity/main/Activity_main_1606891233_team.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/our_activity/activity/main/Activity_main_1606908841_team2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BlogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/EventController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PartnerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PartnerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PhotoGalleryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PhotoGalleryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SkillController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SkillController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SliderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SliderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SuccessStoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SuccessStoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TeamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TeamController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TeamPanelNameController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TeamPanelNameController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TipsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TipsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/VideoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/VideoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/inc/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/inc/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ActivityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ActivityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Admin/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Admin/Activity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/our-activity/activity/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/our-activity/activity/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/our-activity/panel-name/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/our-activity/panel-name/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/our-activity/panel-name/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/our-activity/panel-name/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/our-activity/panel-name/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/our-activity/panel-name/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -232,7 +220,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="php.override.implement.member.chooser.php.doc" value="DEFAULT" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -345,7 +333,8 @@
       <workItem from="1606713123228" duration="93000" />
       <workItem from="1606713407590" duration="1265000" />
       <workItem from="1606725427187" duration="2874000" />
-      <workItem from="1606820038981" duration="5265000" />
+      <workItem from="1606820038981" duration="5366000" />
+      <workItem from="1606891168798" duration="16250000" />
     </task>
     <servers />
   </component>
@@ -376,18 +365,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="437" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1606302308837" />
-    <state x="488" y="45" key="#com.intellij.ide.util.MemberChooser" timestamp="1606820651774">
+    <state x="488" y="45" key="#com.intellij.ide.util.MemberChooser" timestamp="1606891715051">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="45" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1606820651774" />
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606391452587">
+    <state x="488" y="45" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1606891715051" />
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606893052826">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606391452587" />
-    <state x="532" y="274" key="Create Controller" timestamp="1606820467513">
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606893052826" />
+    <state x="532" y="274" key="Create Controller" timestamp="1606891633013">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="532" y="274" key="Create Controller/0.0.1366.728@0.0.1366.728" timestamp="1606820467513" />
+    <state x="532" y="274" key="Create Controller/0.0.1366.728@0.0.1366.728" timestamp="1606891633013" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1606734283629">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -412,10 +401,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1606302174158" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606562565122">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606891595749">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606562565122" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606891595749" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

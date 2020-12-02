@@ -28,7 +28,7 @@
                             <td>@if($loop->index + 1 <10){{'0'.($loop->index+1)}}@endif @if($loop->index + 1 > 9){{($loop->index+1)}}@endif</td>
                             <td>{{$activity->title}}</td>
                             <td><img style="max-width: 50px;height: auto;" src="{{url($activity->image)}}" alt=""></td>
-                            <td>@if ($activity->status == 1) <span class="mb-2 mr-2 badge badge-success">Active</span>@elseif($partner->status == 0)<span class="mb-2 mr-2 badge badge-warning"> Inactive </span> @else <span class="mb-2 mr-2 badge badge-danger"> Unknown </span>@endif</td>
+                            <td>@if ($activity->status == 1) <span class="mb-2 mr-2 badge badge-success">Active</span>@elseif($activity->status == 0)<span class="mb-2 mr-2 badge badge-warning"> Inactive </span> @else <span class="mb-2 mr-2 badge badge-danger"> Unknown </span>@endif</td>
                             <td>
                                 @if($activity->created_by === null)
                                     {{__('Null')}}
@@ -110,4 +110,5 @@
 @section('css')
     <link href="{{asset('backend/assets/plugins/data-tables/datatables.bootstrap4.min.css')}}" rel="stylesheet" />
 @endsection
+
 

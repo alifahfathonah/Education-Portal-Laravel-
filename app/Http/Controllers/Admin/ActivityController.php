@@ -64,7 +64,7 @@ class ActivityController extends Controller implements ComponentCRUD
     public function update($id, Request $request)
     {
         $this->validate($request,[
-            'title'=>'required|max:30|unique:activities,title,'.auth()->user()->id,
+            'title'=>'required|max:30|unique:activities,title,'.$id,
             'image'=>['nullable','mimes:jpeg,png,jpg','max:512']
         ]);
         $activity = Activity::where('id',$id)->first();

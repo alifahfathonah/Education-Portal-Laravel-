@@ -216,6 +216,16 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
             Route::get('{id}/edit','ActivityController@edit')->name('admin.activity.edit');
             Route::put('{id}/update','ActivityController@update')->name('admin.activity.update');
         });
+        //Activity Panel Name
+
+        Route::prefix('activity-panel')->group(function (){
+            Route::get('index','ActivityPanelController@index')->name('admin.activity.panel.index');
+            Route::get('create','ActivityPanelController@create')->name('admin.activity.panel.create');
+            Route::post('store','ActivityPanelController@store')->name('admin.activity.panel.store');
+            Route::get('delete/{id}','ActivityPanelController@delete')->name('admin.activity.panel.delete');
+            Route::get('{id}/edit','ActivityPanelController@edit')->name('admin.activity.panel.edit');
+            Route::put('{id}/update','ActivityPanelController@update')->name('admin.activity.panel.update');
+        });
     });
 
 
