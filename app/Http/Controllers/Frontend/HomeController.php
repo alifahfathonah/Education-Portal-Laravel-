@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Model\Admin\Activity;
 use App\Model\Admin\Admin;
 use App\Model\Admin\Blog;
 use App\Model\Admin\BlogCategory;
@@ -32,6 +33,7 @@ class HomeController extends Controller
         $videos = Video::where('status',1)->orderByDesc('created_at')->limit(4)->get();
         $successStories = SuccessStory::where('status',1)->orderByDesc('id')->limit(8)->get();
         $sliders = Slider::where('status',1)->orderBy('priority','ASC')->get();
+        $activities = Activity::where('status',1)->get();
         return view('frontend.index')
             ->with([
                 'events'=>$event,
@@ -40,8 +42,8 @@ class HomeController extends Controller
                 'admins'=>Admin::all(),
                 'videos'=>$videos,
                 'successStories'=>$successStories,
-                'partners'=>Partner::all(),
-                'sliders'=>$sliders
+                'sliders'=>$sliders,
+                'activities'=>$activities
             ]);
     }
     public function information()
@@ -60,7 +62,6 @@ class HomeController extends Controller
             ->with([
                 'skills'=>$softSkill,
                 'admins'=>$admin,
-                'partners'=>Partner::all()
             ]);
     }
 
@@ -76,7 +77,6 @@ class HomeController extends Controller
             ->with([
                 'skills'=>$academicSkill,
                 'admins'=>$admin,
-                'partners'=>Partner::all()
             ]);
     }
     public function professionalSkill()
@@ -90,7 +90,6 @@ class HomeController extends Controller
             ->with([
                 'skills'=>$professionalSkill,
                 'admins'=>$admin,
-                'partners'=>Partner::all()
             ]);
     }
     public function skillDetails($slug)
@@ -104,7 +103,6 @@ class HomeController extends Controller
                 'skill'=>$skillDetails,
                 'admins'=>Admin::all(),
                 'relateds'=>$relatedSkill,
-                'partners'=>Partner::all()
             ]);
     }
     public function interviewTips()
@@ -113,12 +111,9 @@ class HomeController extends Controller
             ->where('status',1)
             ->orderByDesc('id')
             ->paginate(9);
-
-
         return view('frontend.tips_and_tricks.interview')
             ->with([
                 'interviews'=>$interview,
-                'partners'=>Partner::all()
             ]);
     }
 
@@ -131,7 +126,6 @@ class HomeController extends Controller
         return view('frontend.tips_and_tricks.educational')
         ->with([
             'interviews'=>$educational,
-            'partners'=>Partner::all()
         ]);
     }
 
@@ -144,7 +138,6 @@ class HomeController extends Controller
         return view('frontend.tips_and_tricks.career')
             ->with([
                 'interviews'=>$career,
-                'partners'=>Partner::all()
             ]);
     }
 
@@ -157,7 +150,6 @@ class HomeController extends Controller
         return view('frontend.tips_and_tricks.others')
             ->with([
                 'interviews'=>$others,
-                'partners'=>Partner::all()
             ]);
     }
     public function tipsDetails($slug)
@@ -169,7 +161,6 @@ class HomeController extends Controller
                 'tips'=>$tips,
                 'admins'=>Admin::all(),
                 'relateds'=>$popular,
-                'partners'=>Partner::all()
             ]);
     }
 
@@ -183,7 +174,6 @@ class HomeController extends Controller
                 'categories'=>$categories,
                 'blogs'=>$blogs,
                 'admins'=>$admins,
-                'partners'=>Partner::all()
             ]);
     }
     public function category($category)
@@ -196,7 +186,7 @@ class HomeController extends Controller
                 'categories'=>$categories,
                 'blogs'=>$blog,
                 'admins'=>$admins,
-                'partners'=>Partner::all()
+
             ]);
     }
 
@@ -209,22 +199,17 @@ class HomeController extends Controller
                 'blog'=>$blog,
                 'admins'=>Admin::all(),
                 'relateds'=>$relateds,
-                'partners'=>Partner::all()
+
             ]);
     }
     public function about()
     {
-        return view('frontend.basic.about')
-            ->with([
-                'partners'=>Partner::all()
-            ]);
+        return view('frontend.basic.about');
     }
 
     public function contactUs()
     {
-        return view('frontend.basic.contact-us')->with([
-            'partners'=>Partner::all()
-        ]);
+        return view('frontend.basic.contact-us');
     }
     public function contactStore(Request $request)
     {
@@ -253,16 +238,13 @@ class HomeController extends Controller
             ->with([
                 'panelNames'=>TeamPanelName::where('status',1)->get(),
                 'teams'=>$team,
-                'partners'=>Partner::all()
+
             ]);
     }
 
     public function bloodDonation()
     {
-        return view('frontend.basic.blood-donation')
-            ->with([
-                'partners'=>Partner::all()
-            ]);
+        return view('frontend.basic.blood-donation');
     }
 
     public function eventCampaign()
@@ -280,7 +262,7 @@ class HomeController extends Controller
             ->with([
                 'events'=>$event,
                 'campaigns'=>$campaigns,
-                'partners'=>Partner::all()
+
             ]);
     }
 
@@ -293,29 +275,37 @@ class HomeController extends Controller
                 'event'=>$event,
                 'admins'=>Admin::all(),
                 'relateds'=>$allPrograme,
-                'partners'=>Partner::all()
+
             ]);
     }
 
+    public function activityName($slug)
+    {
+        return view('frontend.activity.index')
+            ->with([
+                'activity'=>Activity::where('slug',$slug)->first()
+            ]);
+    }
+
+
+
     public function uploadDocument()
     {
-        return view('frontend.basic.upload-document')
-            ->with([
-                'partners'=>Partner::all()
-            ]);
+        return view('frontend.basic.upload-document');
     }
 
     public function tryingUpload(Request $request)
     {
         return $request->all();
     }
+
     public function videoGallery()
     {
         $videos = Video::where('status',1)->orderByDesc('created_at')->paginate(12);
         return view('frontend.basic.video-gallery')
             ->with([
-                'videos'=>$videos,
-                'partners'=>Partner::all()
+                'videos'=>$videos
+
             ]);
     }
 

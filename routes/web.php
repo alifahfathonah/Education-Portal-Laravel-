@@ -48,6 +48,9 @@ Route::namespace('Frontend')->group(function (){
     Route::get('upload-document','HomeController@uploadDocument')->name('user.document.upload')->middleware('auth:web');
     Route::post('trying-upload','HomeController@tryingUpload')->name('user.document.store')->middleware('auth:web');
     Route::get('video-gallery','HomeController@videoGallery')->name('user.video.gallery');
+    Route::get('activity/{slug}','HomeController@activityName')->name('user.activity.name');
+
+
 
     Route::post('user-validation','HomeController@validUser')->name('user.valid');
     Route::post('attempt-register-validation','HomeController@attemptRegisterValidation')->name('user.attempt.register');
@@ -217,7 +220,6 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
             Route::put('{id}/update','ActivityController@update')->name('admin.activity.update');
         });
         //Activity Panel Name
-
         Route::prefix('activity-panel')->group(function (){
             Route::get('index','ActivityPanelController@index')->name('admin.activity.panel.index');
             Route::get('create','ActivityPanelController@create')->name('admin.activity.panel.create');
@@ -226,9 +228,16 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
             Route::get('{id}/edit','ActivityPanelController@edit')->name('admin.activity.panel.edit');
             Route::put('{id}/update','ActivityPanelController@update')->name('admin.activity.panel.update');
         });
+        //Activity Post
+        Route::prefix('activity-post')->group(function (){
+            Route::get('index','ActivityPostController@index')->name('admin.activity.post.index');
+            Route::get('create','ActivityPostController@create')->name('admin.activity.post.create');
+            Route::post('store','ActivityPostController@store')->name('admin.activity.post.store');
+            Route::get('delete/{id}','ActivityPostController@delete')->name('admin.activity.post.delete');
+            Route::get('{id}/edit','ActivityPostController@edit')->name('admin.activity.post.edit');
+            Route::put('{id}/update','ActivityPostController@update')->name('admin.activity.post.update');
+        });
     });
-
-
     //Admin Login
     Route::get('/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\LoginController@login');

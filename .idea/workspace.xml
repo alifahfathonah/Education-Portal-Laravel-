@@ -11,21 +11,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="407f3d8c-4f46-4f0d-adb9-fca67e672a7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ActivityPanelController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Admin/ActivityPanel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Admin/ActivityPost.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_02_064300_create_activity_panels_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_02_073746_create_activity_posts_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_02_104837_create_activity_panel_activity_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/our_activity/activity/main/Activity_main_1606891233_team.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/our_activity/activity/main/Activity_main_1606908841_team2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ActivityPostController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_03_105106_create_activity_post_activity_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_03_105512_create_activity_post_activity_panel_tabel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/our_activity/activity/main/Activity_main_1606978230_team4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/our_activity/post/Activity_post_1606993044_bd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/our_activity/post/Activity_post_1606993407_civil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/our_activity/post/Activity_post_1606994044_chemical.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/our_activity/post/Partner_main_1606992529_cse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/our-activity/post/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/our-activity/post/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/our-activity/post/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/activity/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ActivityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ActivityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ActivityPanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ActivityPanelController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Model/Admin/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Admin/Activity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Admin/ActivityPanel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Admin/ActivityPanel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Admin/ActivityPost.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Admin/ActivityPost.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_02_073746_create_activity_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_02_073746_create_activity_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/blog/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/blog/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/inc/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/inc/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/our-activity/activity/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/our-activity/activity/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/our-activity/activity/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/our-activity/activity/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/our-activity/panel-name/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/our-activity/panel-name/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/our-activity/panel-name/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/our-activity/panel-name/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/our-activity/panel-name/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/our-activity/panel-name/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/inc/home-menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/inc/home-menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/homeapp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/homeapp.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/innerapp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/innerapp.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -220,7 +234,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="php.override.implement.member.chooser.php.doc" value="DEFAULT" />
+    <property name="php.override.implement.member.chooser.php.doc" value="INHERIT" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -334,7 +348,9 @@
       <workItem from="1606713407590" duration="1265000" />
       <workItem from="1606725427187" duration="2874000" />
       <workItem from="1606820038981" duration="5366000" />
-      <workItem from="1606891168798" duration="16250000" />
+      <workItem from="1606891168798" duration="16322000" />
+      <workItem from="1606971027488" duration="428000" />
+      <workItem from="1606971984298" duration="20721000" />
     </task>
     <servers />
   </component>
@@ -365,18 +381,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="437" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1606302308837" />
-    <state x="488" y="45" key="#com.intellij.ide.util.MemberChooser" timestamp="1606891715051">
+    <state x="488" y="45" key="#com.intellij.ide.util.MemberChooser" timestamp="1606987214379">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="45" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1606891715051" />
+    <state x="488" y="45" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1606987214379" />
     <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606893052826">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606893052826" />
-    <state x="532" y="274" key="Create Controller" timestamp="1606891633013">
+    <state x="532" y="274" key="Create Controller" timestamp="1606987192823">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="532" y="274" key="Create Controller/0.0.1366.728@0.0.1366.728" timestamp="1606891633013" />
+    <state x="532" y="274" key="Create Controller/0.0.1366.728@0.0.1366.728" timestamp="1606987192823" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1606734283629">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -401,10 +417,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1606302174158" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606891595749">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606987420773">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606891595749" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606987420773" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

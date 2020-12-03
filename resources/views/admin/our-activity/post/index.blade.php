@@ -2,9 +2,9 @@
 @section('main-content')
     <div class="card card-default">
         <div class="card-header card-header-border-bottom d-flex justify-content-between">
-            <h2>Activity Name</h2>
-            <a href="{{route('admin.activity.create')}}" class="btn btn-outline-primary btn-sm text-uppercase">
-                <i class="fa fa-plus"></i> Add Activity
+            <h2>Activity Post</h2>
+            <a href="{{route('admin.activity.post.create')}}" class="btn btn-outline-primary btn-sm text-uppercase">
+                <i class="fa fa-plus"></i> Add Activity Post
             </a>
         </div>
 
@@ -14,48 +14,54 @@
                     <thead>
                     <tr>
                         <th>SL</th>
-                        <th>Activity Name</th>
+                        <th>Short Title</th>
                         <th>Image</th>
                         <th>Status</th>
-                        <th>Connected By </th>
+                        <th>Activity</th>
+                        <th>Activity Panel</th>
                         <th>Created By</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($activities as $activity)
+                    @foreach($posts as $post)
                         <tr>
                             <td>@if($loop->index + 1 <10){{'0'.($loop->index+1)}}@endif @if($loop->index + 1 > 9){{($loop->index+1)}}@endif</td>
-                            <td>{{$activity->title}}</td>
-                            <td><img style="max-width: 50px;height: auto;" src="{{url($activity->image)}}" alt=""></td>
-                            <td>@if ($activity->status == 1) <span class="mb-2 mr-2 badge badge-success">Active</span>@elseif($activity->status == 0)<span class="mb-2 mr-2 badge badge-warning"> Inactive </span> @else <span class="mb-2 mr-2 badge badge-danger"> Unknown </span>@endif</td>
+                            <td>{{$post->short_title}}</td>
+                            <td><img style="max-width: 50px;height: auto;" src="{{url($post->logo)}}" alt=""></td>
+                            <td>@if ($post->status == 1) <span class="mb-2 mr-2 badge badge-success">Active</span>@elseif($post->status == 0)<span class="mb-2 mr-2 badge badge-warning"> Inactive </span> @else <span class="mb-2 mr-2 badge badge-danger"> Unknown </span>@endif</td>
                             <td>
-                                @forelse($activity->activityPanels as $panel)
-                                    <span class="badge badge-warning" style="display: block;margin-top: 5px;font-size: 14px;">{{$panel->title}}</span>
+                                @forelse($post->activities as $activity)
+                                    <span class="badge badge-warning" style="display: block;margin-top: 5px;font-size: 14px;">{{$activity->title}}</span>
                                 @empty
-                                    <span class="badge badge-danger" style="display: block;margin-top: 5px;font-size: 14px;">Not Connected</span>
+                                    <span class="badge badge-danger" style="display: block;margin-top: 5px;font-size: 14px;">{{__('Not Connected')}}</span>
                                 @endforelse
                             </td>
                             <td>
-                                @if($activity->created_by === null)
+                                @forelse($post->activityPanels as $panel)
+                                    <span class="badge badge-warning" style="display: block;margin-top: 5px;font-size: 14px;">{{$panel->title}}</span>
+                                @empty
+                                    <span class="badge badge-danger" style="display: block;margin-top: 5px;font-size: 14px;">{{__('Not Connected')}}</span>
+                                @endforelse
+                            </td>
+                            <td>
+                                @if($post->created_by === null)
                                     {{__('Null')}}
                                 @else
                                     @foreach($admins as $admin)
-                                        @if($activity->created_by == $admin->id)
+                                        @if($post->created_by == $admin->id)
                                             {{$admin->name}}
                                         @endif
                                     @endforeach
                                 @endif
                             </td>
                             <td>
-                                <a data-toggle="tooltip" title="Edit" href="{{route('admin.activity.edit',['id'=>$activity->id])}}" class="btn btn-sm btn-primary">
+                                <a data-toggle="tooltip" title="Edit" href="{{route('admin.activity.post.edit',['id'=>$post->id])}}" class="btn btn-sm btn-primary">
                                     <i class="fa fa-edit"></i>
                                 </a>
-                                @if(DB::table('activity_panel_activity')->where('activity_id',$activity->id)->count() < 1)
-                                    <a  data-toggle="tooltip" title="Trash" href="{{route('admin.activity.delete',['id'=>$activity->id])}}" class="btn btn-sm btn-danger delete">
-                                        <i class="fa fa-trash"></i>
-                                    </a>
-                                @endif
+                                <a  data-toggle="tooltip" title="Trash" href="{{route('admin.activity.post.delete',['id'=>$post->id])}}" class="btn btn-sm btn-danger delete">
+                                    <i class="fa fa-trash"></i>
+                                </a>
                             </td>
                         </tr>
                     @endforeach
@@ -90,7 +96,7 @@
                 var link = $(this).attr('href');
                 Swal.fire({
                     title: 'Are you sure?',
-                    text: "You want to delete?",
+                    text: "You want to delete Skill?",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
@@ -108,5 +114,4 @@
 @section('css')
     <link href="{{asset('backend/assets/plugins/data-tables/datatables.bootstrap4.min.css')}}" rel="stylesheet" />
 @endsection
-
 

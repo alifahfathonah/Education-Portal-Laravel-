@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Thumbnail Image :</label>
-                    <input type="file" class="form-control-file @error('image') is-invalid @enderror" id="exampleFormControlFile1" name="image">
+                    <input type="file" class="form-control @error('image') is-invalid @enderror" id="exampleFormControlFile1" name="image">
                     @error('image')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
                 </div>
                 <div class="form-group">

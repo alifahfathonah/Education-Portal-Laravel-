@@ -18,7 +18,7 @@ class ActivityController extends Controller implements ComponentCRUD
     {
         return view('admin.our-activity.activity.index')
             ->with([
-                'activities'=>Activity::where('status',1)->orderByDesc('id')->get(),
+                'activities'=>Activity::orderByDesc('id')->get(),
                 'admins'=>Admin::all()
             ]);
     }

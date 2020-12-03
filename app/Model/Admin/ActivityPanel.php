@@ -10,4 +10,9 @@ class ActivityPanel extends Model
     {
         return $this->belongsToMany(Activity::class,'activity_panel_activity');
     }
+
+    public function activityPosts()
+    {
+        return $this->belongsToMany(ActivityPost::class,'activity_post_activity_panel')->withTimestamps();
+    }
 }

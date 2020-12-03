@@ -273,54 +273,20 @@
                 </div><!-- end col-md-8 -->
             </div>
             <div class="row">
+                @foreach($activities as $activity)
                 <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <a href="">
+                    <a href="{{route('user.activity.name',['slug'=>$activity->slug])}}">
                         <div class="quick">
                             <div class="image">
-                                <img src="{{asset('frontend/asset/images/career.png')}}" alt="">
+                                <img src="{{url($activity->image)}}" alt="">
                             </div>
                             <div class="text">
-                                <h2>Career Activity</h2>
+                                <h2>{{$activity->title}}</h2>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <a href="">
-                        <div class="quick">
-                            <div class="image">
-                                <img src="{{asset('frontend/asset/images/social.jpg.webp')}}" alt="">
-                            </div>
-                            <div class="text">
-                                <h2>Social Activity</h2>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <a href="careeractivity.html">
-                        <div class="quick">
-                            <div class="image">
-                                <img src="{{asset('frontend/asset/images/global.jpg')}}" alt="">
-                            </div>
-                            <div class="text">
-                                <h2>Global Activity</h2>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <a href="">
-                        <div class="quick">
-                            <div class="image">
-                                <img src="{{asset('frontend/asset/images/compute.jpg')}}" alt="">
-                            </div>
-                            <div class="text">
-                                <h2>Traning Activity</h2>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

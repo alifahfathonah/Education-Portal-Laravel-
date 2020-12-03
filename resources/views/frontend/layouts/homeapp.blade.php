@@ -185,12 +185,10 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="client-logo">
-                    @foreach($partners as $partner)
-                        @if((int)$partner->status === 1)
+                    @foreach(\App\Model\Admin\Partner::where('status',1)->get() as $partner)
                         <div class="client-logo-item">
                             <a href="{{$partner->url}}"><img src="{{url('uploads/partner/main/'.$partner->logo)}}" alt="brand image"></a>
                         </div><!-- end client-logo-item -->
-                        @endif
                     @endforeach
 
                 </div><!-- end client-logo -->

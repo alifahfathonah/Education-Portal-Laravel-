@@ -34,7 +34,6 @@ class ActivityPanelController extends Controller implements ComponentCRUD
 
     public function store(Request $request)
     {
-
         $this->validate($request,[
            'title'=>['required','max:191']
         ]);
@@ -49,12 +48,12 @@ class ActivityPanelController extends Controller implements ComponentCRUD
         toast('Panel Name Added Successful...!','success');
         return redirect()->route('admin.activity.panel.index');
     }
-
     public function edit($id)
     {
         return view('admin.our-activity.panel-name.edit')
             ->with([
-               'panelName'=>ActivityPanel::where('id',$id)->first()
+               'panelName'=>ActivityPanel::where('id',$id)->first(),
+                'activities'=> Activity::where('status',1)->get()
             ]);
     }
 
@@ -67,6 +66,9 @@ class ActivityPanelController extends Controller implements ComponentCRUD
         $panelName->title = $request->title;
         $panelName->status = $request->status;
         $panelName->updated_by = \Auth::id();
+        if ($request->activity){
+            $panelName->activities()->sync($request->activity);
+        }
         $panelName->save();
         toast('Panel Name Update Successful...!','success');
         return redirect()->route('admin.activity.panel.index');

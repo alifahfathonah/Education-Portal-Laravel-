@@ -53,11 +53,9 @@
                                 <li>
                                     <a href="#">Our Activity</a>
                                     <ul class="dropdown-menu-item">
-                                        <li><a href="careeractivity.html">Career Activity</a></li>
-                                        <li><a href="careeractivity.html">Social Activity</a></li>
-                                        <li><a href="careeractivity.html">Global Activity</a></li>
-                                        <li><a href="careeractivity.html">Training Activity</a></li>
-
+                                        @foreach(\App\Model\Admin\Activity::where('status',1)->get() as $activity)
+                                        <li><a href="{{route('user.activity.name',['slug'=>$activity->slug])}}">{{$activity->title}}</a></li>
+                                        @endforeach
                                         <li><a href="careeractivity.html">Seminar and Workshop</a></li>
                                         <li><a href="{{route('user.blood.donation')}}">Blood Donation</a></li>
                                         <li>
