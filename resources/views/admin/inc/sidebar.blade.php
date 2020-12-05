@@ -259,7 +259,7 @@
                         <i class="mdi mdi-view-dashboard-outline"></i>
                         <span class="nav-text">Our Activity</span> <b class="caret"></b>
                     </a>
-                    <ul  class="collapse @if($prefix === 'admin/our-activity/activity') show @elseif($prefix === 'admin/our-activity/activity-panel') show @endif"  id="ouractivity"
+                    <ul  class="collapse @if($prefix === 'admin/our-activity/activity') show @elseif($prefix === 'admin/our-activity/activity-panel') show @elseif($prefix === 'admin/our-activity/activity-post') show @endif"  id="ouractivity"
                          data-parent="#sidebar-menu">
                         <div class="sub-menu">
                             <li class="@if($currentRouteName === 'admin.activity.index') active @endif">
@@ -270,6 +270,11 @@
                             <li class="@if($currentRouteName === 'admin.activity.panel.index') active @endif">
                                 <a class="sidenav-item-link" href="{{route('admin.activity.panel.index')}}">
                                     <span class="nav-text">Activity Panel</span>
+                                </a>
+                            </li>
+                            <li class="@if($currentRouteName === 'admin.activity.post.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.activity.post.index')}}">
+                                    <span class="nav-text">Activity Post</span>
                                 </a>
                             </li>
                         </div>

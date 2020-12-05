@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Model\Admin\Activity;
+use App\Model\Admin\ActivityPanel;
+use App\Model\Admin\ActivityPost;
 use App\Model\Admin\Admin;
 use App\Model\Admin\Blog;
 use App\Model\Admin\BlogCategory;
@@ -27,13 +29,34 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $event = Event::where('event_type','Event')->where('status',1)->whereDate('start_date','<=',Carbon::now())->orderByDesc('start_date')->limit(6)->get();
-        $upComingEvents = Event::where('event_type','Event')->where('status',1)->whereDate('start_date','>',Carbon::now())->orderByDesc('start_date')->limit(3)->get();
-        $latestBlog = Blog::where('status',1)->limit(6)->get();
-        $videos = Video::where('status',1)->orderByDesc('created_at')->limit(4)->get();
-        $successStories = SuccessStory::where('status',1)->orderByDesc('id')->limit(8)->get();
-        $sliders = Slider::where('status',1)->orderBy('priority','ASC')->get();
-        $activities = Activity::where('status',1)->get();
+        $event = Event::where('event_type','Event')
+            ->where('status',1)
+            ->whereDate('start_date','<=',Carbon::now())
+            ->orderByDesc('start_date')
+            ->limit(6)
+            ->get();
+        $upComingEvents = Event::where('event_type','Event')
+            ->where('status',1)
+            ->whereDate('start_date','>',Carbon::now())
+            ->orderByDesc('start_date')
+            ->limit(3)
+            ->get();
+        $latestBlog = Blog::where('status',1)
+            ->limit(6)
+            ->get();
+        $videos = Video::where('status',1)
+            ->orderByDesc('created_at')
+            ->limit(4)
+            ->get();
+        $successStories = SuccessStory::where('status',1)
+            ->orderByDesc('id')
+            ->limit(8)
+            ->get();
+        $sliders = Slider::where('status',1)
+            ->orderBy('priority','ASC')
+            ->get();
+        $activities = Activity::where('status',1)
+            ->get();
         return view('frontend.index')
             ->with([
                 'events'=>$event,
@@ -97,7 +120,9 @@ class HomeController extends Controller
         $skillDetails = Skill::where('status',1)
             ->where('slug',$slug)
             ->first();
-        $relatedSkill = Skill::where('status',1)->orderByDesc('created_at')->get();
+        $relatedSkill = Skill::where('status',1)
+            ->orderByDesc('created_at')
+            ->get();
         return view('frontend.skill_development.details')
             ->with([
                 'skill'=>$skillDetails,
@@ -154,8 +179,12 @@ class HomeController extends Controller
     }
     public function tipsDetails($slug)
     {
-        $tips = Tips::where('status',1)->where('slug',$slug)->first();
-        $popular = Tips::where('status',1)->orderByDesc('created_at')->get();
+        $tips = Tips::where('status',1)
+            ->where('slug',$slug)
+            ->first();
+        $popular = Tips::where('status',1)
+            ->orderByDesc('created_at')
+            ->get();
         return view('frontend.tips_and_tricks.details')
             ->with([
                 'tips'=>$tips,
@@ -166,8 +195,12 @@ class HomeController extends Controller
 
     public function blog()
     {
-        $categories = BlogCategory::where('status',1)->orderByDesc('id')->get();
-        $blogs = Blog::where('status',1)->orderByDesc('created_at')->paginate(6);
+        $categories = BlogCategory::where('status',1)
+            ->orderByDesc('id')
+            ->get();
+        $blogs = Blog::where('status',1)
+            ->orderByDesc('created_at')
+            ->paginate(6);
         $admins = Admin::all();
         return view('frontend.blog.blog')
             ->with([
@@ -178,8 +211,13 @@ class HomeController extends Controller
     }
     public function category($category)
     {
-        $blog = Blog::where('status',1)->where('category',$category)->orderByDesc('created_at')->paginate(6);
-        $categories = BlogCategory::where('status',1)->orderByDesc('id')->get();
+        $blog = Blog::where('status',1)
+            ->where('category',$category)
+            ->orderByDesc('created_at')
+            ->paginate(6);
+        $categories = BlogCategory::where('status',1)
+            ->orderByDesc('id')
+            ->get();
         $admins = Admin::all();
         return view('frontend.blog.category_blog')
             ->with([
@@ -192,8 +230,13 @@ class HomeController extends Controller
 
     public function blogDetails($slug)
     {
-        $blog = Blog::with('blogcategories')->where('status',1)->where('slug',$slug)->first();
-        $relateds = Blog::where('status',1)->orderByDesc('created_at')->get();
+        $blog = Blog::with('blogcategories')
+            ->where('status',1)
+            ->where('slug',$slug)
+            ->first();
+        $relateds = Blog::where('status',1)
+            ->orderByDesc('created_at')
+            ->get();
         return view('frontend.blog.details')
             ->with([
                 'blog'=>$blog,
@@ -233,12 +276,10 @@ class HomeController extends Controller
     //For SOE Team
     public function soeTeam()
     {
-        $team = Team::where('status',1)->get();
         return view('frontend.basic.team')
             ->with([
                 'panelNames'=>TeamPanelName::where('status',1)->get(),
-                'teams'=>$team,
-
+                'teams'=>Team::where('status',1)->get()
             ]);
     }
 
@@ -268,8 +309,12 @@ class HomeController extends Controller
 
     public function eventDetails($slug)
     {
-        $event = Event::where('slug',$slug)->where('status',1)->first();
-        $allPrograme = Event::where('status',1)->orderByDesc('start_date')->get();
+        $event = Event::where('slug',$slug)
+            ->where('status',1)
+            ->first();
+        $allPrograme = Event::where('status',1)
+            ->orderByDesc('start_date')
+            ->get();
         return view('frontend.event.details')
             ->with([
                 'event'=>$event,
@@ -283,12 +328,21 @@ class HomeController extends Controller
     {
         return view('frontend.activity.index')
             ->with([
-                'activity'=>Activity::where('slug',$slug)->first()
+                'activity'=>Activity::where('slug',$slug)->first(),
+                'activityPosts'=>ActivityPost::where('status',1)->orderByDesc('id')->get(),
+                'activityPanelName' =>ActivityPanel::where('status',1)->orderByDesc('id')->get()
             ]);
     }
 
+    public function activityPostDetails($slug)
+    {
+        return view('frontend.activity.details')
+            ->with([
+                'activityPost'=>ActivityPost::where('slug',$slug)->first(),
+                'admins'=>Admin::all(),
+            ]);
 
-
+    }
     public function uploadDocument()
     {
         return view('frontend.basic.upload-document');
@@ -301,7 +355,9 @@ class HomeController extends Controller
 
     public function videoGallery()
     {
-        $videos = Video::where('status',1)->orderByDesc('created_at')->paginate(12);
+        $videos = Video::where('status',1)
+            ->orderByDesc('created_at')
+            ->paginate(12);
         return view('frontend.basic.video-gallery')
             ->with([
                 'videos'=>$videos
@@ -311,7 +367,8 @@ class HomeController extends Controller
 
     public function validUser(Request $request)
     {
-        $email = User::where('email',$request->email)->first();
+        $email = User::where('email',$request->email)
+            ->first();
         if ($email){
             return response()->json(true);
         }else{
@@ -321,7 +378,8 @@ class HomeController extends Controller
 
     public function attemptRegisterValidation(Request $request)
     {
-        $email = User::where('email',$request->email)->first();
+        $email = User::where('email',$request->email)
+            ->first();
         if ($email){
             return response()->json(true);
         }else{

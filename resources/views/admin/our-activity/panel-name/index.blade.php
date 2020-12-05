@@ -49,9 +49,11 @@
                                 <a data-toggle="tooltip" title="Edit" href="{{route('admin.activity.panel.edit',['id'=>$panelName->id])}}" class="btn btn-sm btn-primary">
                                     <i class="fa fa-edit"></i>
                                 </a>
-                                <a  data-toggle="tooltip" title="Trash" href="{{route('admin.activity.panel.delete',['id'=>$panelName->id])}}" class="btn btn-sm btn-danger delete">
-                                    <i class="fa fa-trash"></i>
-                                </a>
+                                @if(DB::table('activity_post_activity_panel')->where('activity_panel_id',$panelName->id)->count() < 1)
+                                    <a  data-toggle="tooltip" title="Trash" href="{{route('admin.activity.panel.delete',['id'=>$panelName->id])}}" class="btn btn-sm btn-danger delete">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                @endif
                             </td>
                         </tr>
                     @endforeach

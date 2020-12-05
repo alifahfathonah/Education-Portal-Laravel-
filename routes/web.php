@@ -49,6 +49,7 @@ Route::namespace('Frontend')->group(function (){
     Route::post('trying-upload','HomeController@tryingUpload')->name('user.document.store')->middleware('auth:web');
     Route::get('video-gallery','HomeController@videoGallery')->name('user.video.gallery');
     Route::get('activity/{slug}','HomeController@activityName')->name('user.activity.name');
+    Route::get('activity/details/{slug}','HomeController@activityPostDetails')->name('user.activity.post.detail');
 
 
 

@@ -15,10 +15,20 @@
                                 </div>
                                 <div class="section-content">
                                     <ul>
-                                        <li><a href="online-preparation-section.html">
-                                                <img width="259" height="261" src="{{asset('frontend/asset/images/dep/cse.png')}}"
-                                                     class="attachment-medium size-medium wp-post-image" alt="">Computer Science & Engineering</a>
-                                        </li>
+                                        @foreach($activityPosts as $post)
+                                            @foreach($post->activities as $activityName)
+                                                @if((int)$activityName->id === (int)$activity->id )
+                                                    @foreach($post->activityPanels as $panelName)
+                                                        @if((int) $panelName->id === (int) $panel->id)
+                                                        <li><a href="{{route('user.activity.post.detail',['slug'=>$post->slug])}}">
+                                                                <img width="259" height="261" src="{{url($post->logo)}}"
+                                                                     class="attachment-medium size-medium wp-post-image" alt="">{{$post->short_title}}</a>
+                                                        </li>
+                                                        @endif
+                                                    @endforeach
+                                                @endif
+                                            @endforeach
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>

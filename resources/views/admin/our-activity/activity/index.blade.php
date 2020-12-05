@@ -51,7 +51,7 @@
                                 <a data-toggle="tooltip" title="Edit" href="{{route('admin.activity.edit',['id'=>$activity->id])}}" class="btn btn-sm btn-primary">
                                     <i class="fa fa-edit"></i>
                                 </a>
-                                @if(DB::table('activity_panel_activity')->where('activity_id',$activity->id)->count() < 1)
+                                @if(DB::table('activity_panel_activity')->where('activity_id',$activity->id)->count() < 1 && DB::table('activity_post_activity')->where('activity_id',$activity->id)->count() < 1)
                                     <a  data-toggle="tooltip" title="Trash" href="{{route('admin.activity.delete',['id'=>$activity->id])}}" class="btn btn-sm btn-danger delete">
                                         <i class="fa fa-trash"></i>
                                     </a>
