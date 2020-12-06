@@ -50,8 +50,10 @@ Route::namespace('Frontend')->group(function (){
     Route::get('video-gallery','HomeController@videoGallery')->name('user.video.gallery');
     Route::get('activity/{slug}','HomeController@activityName')->name('user.activity.name');
     Route::get('activity/details/{slug}','HomeController@activityPostDetails')->name('user.activity.post.detail');
-
-
+    Route::get('profile','HomeController@profile')->name('user.profile')->middleware('auth:web');
+    Route::get('profile/edit','HomeController@editProfile')->name('user.profile.edit')->middleware('auth:web');
+    Route::get('photo-gallery','HomeController@photoGallery')->name('user.photo.gallery');
+    Route::get('photo-gallery/{id}/{year}','HomeController@photoGalleryByYear')->name('user.photo.gallery.year');
 
     Route::post('user-validation','HomeController@validUser')->name('user.valid');
     Route::post('attempt-register-validation','HomeController@attemptRegisterValidation')->name('user.attempt.register');

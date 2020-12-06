@@ -72,7 +72,7 @@
                                                     {{ucfirst(auth()->user()->first_name).' '.ucfirst(auth()->user()->last_name)}}
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-left" style="background:#EE5222;color: #fff!important;">
-                                                    <a class="dropdown-item" type="button"><i class="fa fa-user"></i> Profile</a>
+                                                    <a class="dropdown-item" type="button" href="{{route('user.profile')}}" style="color: #fff;"><i class="fa fa-user"></i> Profile</a>
                                                     <a style="color: #fff;"  class="dropdown-item" type="button" href="{{ route('logout') }}"
                                                        onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();

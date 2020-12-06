@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('institute_name',100);
             $table->tinyInteger('blood_donation_status')->default(0);
             $table->string('membership_status',10)->default('free');
+            $table->string('image')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->string('street_address')->nullable();
             $table->string('upozila',25)->nullable();

@@ -11,6 +11,8 @@ use App\Model\Admin\Blog;
 use App\Model\Admin\BlogCategory;
 use App\Model\Admin\Event;
 use App\Model\Admin\Partner;
+use App\Model\Admin\PhotoGallery;
+use App\Model\Admin\PhotoGalleryYear;
 use App\Model\Admin\Skill;
 use App\Model\Admin\Slider;
 use App\Model\Admin\SuccessStory;
@@ -385,5 +387,34 @@ class HomeController extends Controller
         }else{
             return response()->json(false);
         }
+    }
+
+    public function profile()
+    {
+        return view('frontend.profile.index');
+    }
+
+    public function editProfile()
+    {
+        return view('frontend.profile.edit');
+    }
+
+    public function photoGallery()
+    {
+        return view('frontend.basic.photo-gallery')
+            ->with([
+                'photoYears'=>PhotoGalleryYear::orderByDesc('name')->get(),
+                'photos'=>PhotoGallery::where('status',1)->orderByDesc('id')->get(),
+                'emptyCheck'=>collect(PhotoGallery::where('status',1)->pluck('year'))->unique()->values()->all() //Retrieve only unique value
+            ]);
+    }
+
+    public function photoGalleryByYear($id,$year)
+    {
+        return view('frontend.basic.photo-single')
+        ->with([
+           'photos'=>PhotoGallery::where('year',$id)->where('status',1)->orderByDesc('id')->get(),
+            'year'=>$year
+        ]);
     }
 }

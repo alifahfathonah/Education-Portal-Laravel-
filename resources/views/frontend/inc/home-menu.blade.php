@@ -62,7 +62,7 @@
                                             <a href="#">Media</a>
                                             <ul class="dropdown-menu-item">
                                                 <li><a href="tips.html">News</a></li>
-                                                <li><a href="photo-gallery.html">Photo Gallery</a></li>
+                                                <li><a href="{{route('user.photo.gallery')}}">Photo Gallery</a></li>
                                                 <li><a href="{{route('user.video.gallery')}}">Video Gallery</a></li>
                                             </ul>
                                         </li>
