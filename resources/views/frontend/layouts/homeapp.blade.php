@@ -46,7 +46,7 @@
                     <div class="col-lg-6">
                         <div class="header-widget header-widget1">
                             <ul class="contact-info d-flex align-items-center">
-                                <li><a href="#"><span class="la la-phone"></span> 123-456-789</a> </li>
+                                <li><a href="#"><span class="la la-phone"></span> 01858-173371</a> </li>
                                 <li><a href="#"><span class="la la-envelope-o"></span> schoolofengr@gmail.com</a></li>
                             </ul>
                         </div><!-- end header-widget -->
@@ -246,9 +246,9 @@
                     <h3 class="footer-title">Contact us</h3>
                     <span class="section__divider"></span>
                     <ul class="footer-address mt-0">
-                        <li><a href="tel:+8801912679289">+8801912679289</a></li>
-                        <li><a href="mailto:support@wbsite.com" class="mail">support@website.com</a></li>
-                        <li>House No-37,Road No-05,Nikunja-2,Dhaka, Bangladesh</li>
+                        <li><a href="tel:01858173371">01858-173371</a></li>
+                        <li><a href="mailto:support@wbsite.com" class="mail">schoolofengr@gmail.com</a></li>
+                        <li>House# 37, Road# 5 Nikunja-2, Khilkhet, Dhaka</li>
                     </ul>
                     <ul class="footer-social">
                         <li>

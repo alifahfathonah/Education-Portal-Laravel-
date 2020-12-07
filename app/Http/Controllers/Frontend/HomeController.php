@@ -21,6 +21,7 @@ use App\Model\Admin\TeamPanelName;
 use App\Model\Admin\Tips;
 use App\Model\Admin\Video;
 use App\Model\Frontend\Contact;
+use App\Model\Frontend\Upload;
 use App\User;
 use Carbon\Carbon;
 use http\Message;
@@ -352,7 +353,33 @@ class HomeController extends Controller
 
     public function tryingUpload(Request $request)
     {
-        return $request->all();
+
+        $this->validate($request,[
+           'title'=>['required','max:191'],
+           'type'=>['required'],
+           'department'=>['required'],
+           'files'=>['required'],
+        ]);
+
+        foreach ($request->file('files') as $key =>$file){
+            $upload = new Upload();
+            $upload->title = $request->title;
+            $upload->type = $request->type;
+            if ($request->other_type){
+                $upload->other_type = $request->other_type;
+            }
+            $upload->department = $request->department;
+            if ($request->comment){
+                $upload->comment = $request->comment;
+            }
+            $filename = 'File_'.$key.date('YmdHi').$file->getClientOriginalName();
+            $file->move('uploads/document/',$filename);
+            $upload->file = 'uploads/document/'.$filename;
+            $upload->created_by = \Auth::id();
+            $upload->save();
+        }
+        alert()->success('Success','Document Upload Successfully');
+        return redirect()->back();
     }
 
     public function videoGallery()

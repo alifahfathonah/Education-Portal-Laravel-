@@ -11,23 +11,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="407f3d8c-4f46-4f0d-adb9-fca67e672a7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/main/Gallery_main_1607237374_about-breadcrumb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/thumb/Gallery_thumb_1607237374_about-breadcrumb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/mix/profile.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/basic/photo-gallery.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/basic/photo-single.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/profile/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/profile/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserDocumentController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/document/File_0202012070932220px-Dwayne_Johnson_at_the_2009_Tribeca_Film_Festival.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/document/File_1202012070932219_05_busbusiness_interviewHeader_1485x1254.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/document/approve.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/document/pending.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/document/reject.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Frontend/UserFileUpload.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Frontend/Upload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_24_062318_create_user_file_uploads_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_07_072823_create_uploads_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/inc/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/inc/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/inc/home-menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/inc/home-menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/partner/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partner/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/basic/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/basic/about.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/basic/upload-document.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/basic/upload-document.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/homeapp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/homeapp.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/innerapp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/innerapp.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -200,18 +198,18 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Laravel-Blog-with-Admin-Panel\app\Model\Admin" />
-      <recent name="C:\xampp\htdocs\blogs\app\Http\Controllers\Admin" />
-      <recent name="C:\xampp\htdocs\blogs\app" />
-      <recent name="C:\xampp\htdocs\blogs\app\Model\User" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Laravel-Blog-with-Admin-Panel\public\uploads\mix" />
       <recent name="C:\xampp\htdocs\Laravel-Blog-with-Admin-Panel\public\frontend\asset\images" />
       <recent name="C:\xampp\htdocs\Laravel-Blog-with-Admin-Panel\resources\views\admin\team\team_panel" />
       <recent name="C:\xampp\htdocs\blogs\resources\views\admin\users" />
       <recent name="C:\xampp\htdocs\blogs\resources\views\admin\permission" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Laravel-Blog-with-Admin-Panel\app\Model\Admin" />
+      <recent name="C:\xampp\htdocs\blogs\app\Http\Controllers\Admin" />
+      <recent name="C:\xampp\htdocs\blogs\app" />
+      <recent name="C:\xampp\htdocs\blogs\app\Model\User" />
     </key>
   </component>
   <component name="RunManager">
@@ -312,7 +310,8 @@
       <workItem from="1606971027488" duration="428000" />
       <workItem from="1606971984298" duration="21086000" />
       <workItem from="1607144545545" duration="17149000" />
-      <workItem from="1607231506935" duration="8965000" />
+      <workItem from="1607231506935" duration="18059000" />
+      <workItem from="1607322104324" duration="14341000" />
     </task>
     <servers />
   </component>
@@ -347,22 +346,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1607153460142" />
-    <state x="437" y="165" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606302308837">
+    <state x="437" y="165" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607343591959">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="437" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1606302308837" />
-    <state x="488" y="45" key="#com.intellij.ide.util.MemberChooser" timestamp="1606987214379">
+    <state x="437" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1607343591959" />
+    <state x="488" y="45" key="#com.intellij.ide.util.MemberChooser" timestamp="1607334333629">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="45" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1606987214379" />
+    <state x="488" y="45" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1607334333629" />
     <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606893052826">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606893052826" />
-    <state x="532" y="274" key="Create Controller" timestamp="1606987192823">
+    <state x="532" y="274" key="Create Controller" timestamp="1607334844889">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="532" y="274" key="Create Controller/0.0.1366.728@0.0.1366.728" timestamp="1606987192823" />
+    <state x="532" y="274" key="Create Controller/0.0.1366.728@0.0.1366.728" timestamp="1607334844888" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1607156739615">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -395,10 +394,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1606302174158" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1607239064085">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1607343109013">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1607239064085" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1607343109013" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

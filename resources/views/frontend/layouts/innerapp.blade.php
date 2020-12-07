@@ -284,7 +284,7 @@
     <i class="fa fa-angle-up" title="Go top"></i>
 </div>
 <!-- end scroll top -->
-
+@include('sweetalert::alert')
 <!-- theme js files -->
 <script src="{{asset('frontend/asset/js/jquery-3.4.1.min.js')}}"></script>
 <script src="{{asset('frontend/asset/js/popper.min.js')}}"></script>

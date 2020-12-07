@@ -3,7 +3,6 @@
     <div class="card card-default">
         <div class="card-header card-header-border-bottom d-flex justify-content-between">
             <h2>Partners</h2>
-
             <a href="{{route('admin.partner.create')}}" class="btn btn-outline-primary btn-sm text-uppercase">
                 <i class="fa fa-plus"></i> Add Partner
             </a>

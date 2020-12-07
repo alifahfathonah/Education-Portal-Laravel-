@@ -284,6 +284,34 @@
                         </div>
                     </ul>
                 </li>
+                <li>
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#document"
+                       aria-expanded="false" aria-controls="dashboard">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">Upload Document</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse @if($prefix === 'admin/document-upload/user-upload') show @endif"  id="document"
+                         data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+
+                            <li class="@if($currentRouteName === 'admin.document.user.pending') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.document.user.pending')}}">
+                                    <span class="nav-text">Pending List</span>
+                                </a>
+                            </li>
+                            <li class="@if($currentRouteName === 'admin.document.user.approve') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.document.user.approve')}}">
+                                    <span class="nav-text">Approved List</span>
+                                </a>
+                            </li>
+                            <li class="@if($currentRouteName === 'admin.document.user.reject') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.document.user.reject')}}">
+                                    <span class="nav-text">Rejected List</span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

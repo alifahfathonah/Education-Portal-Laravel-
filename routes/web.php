@@ -31,7 +31,6 @@ Route::namespace('Frontend')->group(function (){
         Route::get('career-and-planing','HomeController@careerAndPlaningTips')->name('user.tips.career');
         Route::get('others','HomeController@othersTips')->name('user.tips.others');
         Route::get('tips-detail/{slug}','HomeController@tipsDetails')->name('user.tips.details');
-
     });
     Route::get('blog','HomeController@blog')->name('user.blog');
     Route::get('blog/category/{id}','HomeController@category')->name('user.blog.category');
@@ -241,6 +240,18 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
             Route::put('{id}/update','ActivityPostController@update')->name('admin.activity.post.update');
         });
     });
+    //Document Upload Section
+    Route::prefix('document-upload')->group(function (){
+        Route::prefix('user-upload')->group(function (){
+            Route::get('pending','UserDocumentController@pending')->name('admin.document.user.pending');
+            Route::get('approve','UserDocumentController@approve')->name('admin.document.user.approve');
+            Route::get('{id}/approve','UserDocumentController@approveDocument')->name('admin.document.user.approve.attempt');
+            Route::get('reject','UserDocumentController@reject')->name('admin.document.user.reject');
+            Route::get('{id}/reject','UserDocumentController@rejectDocument')->name('admin.document.user.reject.attempt');
+            Route::get('{id}/delete','UserDocumentController@deleteDocument')->name('admin.document.user.delete');
+        });
+    });
+
     //Admin Login
     Route::get('/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\LoginController@login');
