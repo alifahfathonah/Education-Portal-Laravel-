@@ -22,12 +22,10 @@ class ActivityController extends Controller implements ComponentCRUD
                 'admins'=>Admin::all()
             ]);
     }
-
     public function create()
     {
         return view('admin.our-activity.activity.create');
     }
-
     public function store(Request $request)
     {
         $this->validate($request,[

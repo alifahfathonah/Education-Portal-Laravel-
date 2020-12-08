@@ -236,7 +236,7 @@
                         <i class="mdi mdi-view-dashboard-outline"></i>
                         <span class="nav-text">Single Component</span> <b class="caret"></b>
                     </a>
-                    <ul  class="collapse @if($prefix === 'admin/single-component/success-story' || $prefix === 'admin/single-component/slider' || $prefix === 'admin/single-component/photo-gallery') show @endif"  id="single"
+                    <ul  class="collapse @if($prefix === 'admin/single-component/success-story' || $prefix === 'admin/single-component/slider' || $prefix === 'admin/single-component/photo-gallery ' || $prefix === 'admin/single-component/news') show @endif"  id="single"
                          data-parent="#sidebar-menu">
                         <div class="sub-menu">
                             <li class="@if($currentRouteName === 'admin.story.index') active @endif">
@@ -252,6 +252,11 @@
                             <li class="@if($currentRouteName === 'admin.photo.gallery.index') active @endif">
                                 <a class="sidenav-item-link" href="{{route('admin.photo.gallery.index')}}">
                                     <span class="nav-text">Photo Gallery</span>
+                                </a>
+                            </li>
+                            <li class="@if($currentRouteName === 'admin.news.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.news.index')}}">
+                                    <span class="nav-text">News</span>
                                 </a>
                             </li>
                         </div>

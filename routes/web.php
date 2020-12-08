@@ -53,7 +53,8 @@ Route::namespace('Frontend')->group(function (){
     Route::get('profile/edit','HomeController@editProfile')->name('user.profile.edit')->middleware('auth:web');
     Route::get('photo-gallery','HomeController@photoGallery')->name('user.photo.gallery');
     Route::get('photo-gallery/{id}/{year}','HomeController@photoGalleryByYear')->name('user.photo.gallery.year');
-
+    Route::get('news','HomeController@news')->name('user.news');
+    Route::get('news/details/{slug}','HomeController@newsDetails')->name('user.news.details');
     Route::post('user-validation','HomeController@validUser')->name('user.valid');
     Route::post('attempt-register-validation','HomeController@attemptRegisterValidation')->name('user.attempt.register');
 });
@@ -209,6 +210,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
             Route::get('{id}/edit','PhotoGalleryController@edit')->name('admin.photo.gallery.edit');
             Route::put('{id}/update','PhotoGalleryController@update')->name('admin.photo.gallery.update');
         });
+        //For News
+        Route::prefix('news')->group(function (){
+            Route::get('index','NewsController@index')->name('admin.news.index');
+            Route::get('create','NewsController@create')->name('admin.news.create');
+            Route::post('store','NewsController@store')->name('admin.news.store');
+            Route::get('delete/{id}','NewsController@delete')->name('admin.news.delete');
+            Route::get('{id}/edit','NewsController@edit')->name('admin.news.edit');
+            Route::put('{id}/update','NewsController@update')->name('admin.news.update');
+        });
     });
 
     Route::prefix('our-activity')->group(function(){
@@ -251,6 +261,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
             Route::get('{id}/delete','UserDocumentController@deleteDocument')->name('admin.document.user.delete');
         });
     });
+
 
     //Admin Login
     Route::get('/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
