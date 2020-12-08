@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app');
+@extends('frontend.layouts.app')
 @section('page-name')
     {{auth()->user()->first_name.' '.auth()->user()->last_name}}
 @endsection

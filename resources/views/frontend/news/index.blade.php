@@ -29,7 +29,7 @@
 
                                             </p>
                                             <h3 class="course__title">
-                                                <a href="{{route('user.news.details',['slug'=>$news->slug])}}">{{\Illuminate\Support\Str::limit($news->title,70,'..')}}</a>
+                                                <a href="{{route('user.news.details',['slug'=>$news->slug])}}">{{\Illuminate\Support\Str::limit($news->title,60,'..')}}</a>
                                             </h3>
                                         </div><!-- end course-content -->
                                     </div><!-- end course-item -->

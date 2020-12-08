@@ -465,4 +465,33 @@ class HomeController extends Controller
                 'relateds'=> News::where('status',1)->orderByDesc('created_at')->get()
             ]);
     }
+
+    public function privacyPolicy()
+    {
+        return view('frontend.footer-page.privacy-policies');
+    }
+    public function termsAndCondition()
+    {
+        return view('frontend.footer-page.terms');
+    }
+
+    public function faq()
+    {
+        return view('frontend.footer-page.faq');
+    }
+
+    public function support()
+    {
+        return view('frontend.footer-page.support');
+    }
+
+    public function higherStudy()
+    {
+        return view('frontend.higher-study.index');
+    }
+
+    public function jobPreparetion()
+    {
+        return view('frontend.job-preparation.index');
+    }
 }

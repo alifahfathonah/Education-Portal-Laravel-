@@ -16,7 +16,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::namespace('Frontend')->group(function (){
     Route::get('/','HomeController@index')->name('user.home');
-//    Route::get('/information','HomeController@information')->name('user.information');
+    Route::get('/information','HomeController@information')->name('user.information');
+    Route::get('higher-study','HomeController@higherStudy')->name('user.higher.study');
+    Route::get('job-preparation','HomeController@jobPreparetion')->name('user.job.preparation');
     Route::prefix('skill-development')->group(function (){
         //Skill Development Retrieve
         Route::get('/soft-skill','HomeController@softSkill')->name('user.skill.softskill');
@@ -55,6 +57,20 @@ Route::namespace('Frontend')->group(function (){
     Route::get('photo-gallery/{id}/{year}','HomeController@photoGalleryByYear')->name('user.photo.gallery.year');
     Route::get('news','HomeController@news')->name('user.news');
     Route::get('news/details/{slug}','HomeController@newsDetails')->name('user.news.details');
+    Route::get('privacy-policy','HomeController@privacyPolicy')->name('user.privacy.policy');
+    Route::get('terms-&-condition','HomeController@termsAndCondition')->name('user.terms.condition');
+    Route::get('faq','HomeController@faq')->name('user.faq');
+    Route::get('support','HomeController@support')->name('user.support');
+
+
+
+
+
+
+
+
+
+
     Route::post('user-validation','HomeController@validUser')->name('user.valid');
     Route::post('attempt-register-validation','HomeController@attemptRegisterValidation')->name('user.attempt.register');
 });
@@ -267,6 +283,16 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\LoginController@login');
     Route::post('/logout', 'Auth\LoginController@logout')->name('admin.logout');
+
+    Route::get('/clear-cache', function () {
+        Artisan::call('view:clear');
+        Artisan::call('cache:clear');
+        Artisan::call('route:clear');
+        Artisan::call('config:clear');
+        Artisan::call('config:cache');
+        alert()->success('Success','Cache Clear Successful');
+        return redirect()->route('admin.home');
+    })->middleware('auth:admin');
 
 });
 

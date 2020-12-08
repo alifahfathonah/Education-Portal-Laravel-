@@ -25,13 +25,13 @@
                                     <a href="{{route('user.home')}}">Home</a>
                                 </li>
                                 <li>
-                                    <a href="job.html">Job Preparation</a>
+                                    <a href="{{route('user.job.preparation')}}">Job Preparation</a>
                                 </li>
                                 <li>
-                                    <a href="information.html">Information</a>
+                                    <a href="{{route('user.information')}}">Information</a>
                                 </li>
                                 <li>
-                                    <a href="scholarship.html">Higher Study</a>
+                                    <a href="{{route('user.higher.study')}}">Higher Study</a>
                                 </li>
                                 <li>
                                     <a href="#">Skill Development</a>
@@ -56,7 +56,6 @@
                                         @foreach(\App\Model\Admin\Activity::where('status',1)->get() as $activity)
                                         <li><a href="{{route('user.activity.name',['slug'=>$activity->slug])}}">{{$activity->title}}</a></li>
                                         @endforeach
-                                        <li><a href="careeractivity.html">Seminar and Workshop</a></li>
                                         <li><a href="{{route('user.blood.donation')}}">Blood Donation</a></li>
                                         <li>
                                             <a href="#">Media</a>

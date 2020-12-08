@@ -1,6 +1,6 @@
 @extends('frontend.layouts.innerapp')
 @section('page-name')
-    Upload Document
+    Information
 @endsection
 @section('main-content')
 
