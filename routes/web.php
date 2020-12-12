@@ -16,7 +16,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::namespace('Frontend')->group(function (){
     Route::get('/','HomeController@index')->name('user.home');
-    Route::get('/information','HomeController@information')->name('user.information');
+    Route::prefix('information')->group(function (){
+        Route::get('/','HomeController@information')->name('user.information');
+        Route::get('admission','HomeController@admissionInformation')->name('user.information.admission');
+    });
     Route::get('higher-study','HomeController@higherStudy')->name('user.higher.study');
     Route::get('job-preparation','HomeController@jobPreparetion')->name('user.job.preparation');
     Route::prefix('skill-development')->group(function (){
@@ -276,8 +279,27 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
             Route::get('{id}/reject','UserDocumentController@rejectDocument')->name('admin.document.user.reject.attempt');
             Route::get('{id}/delete','UserDocumentController@deleteDocument')->name('admin.document.user.delete');
         });
+
     });
 
+    Route::prefix('information')->group(function (){
+        Route::prefix('admission')->group(function(){
+            Route::get('index','AdmissionController@index')->name('admin.information.admission.index');
+            Route::get('create','AdmissionController@create')->name('admin.information.admission.create');
+            Route::post('store','AdmissionController@store')->name('admin.information.admission.store');
+            Route::get('delete/{id}','AdmissionController@delete')->name('admin.information.admission.delete');
+            Route::get('{id}/edit','AdmissionController@edit')->name('admin.information.admission.edit');
+            Route::put('{id}/update','AdmissionController@update')->name('admin.information.admission.update');
+        });
+        Route::prefix('job-bazar')->group(function(){
+            Route::get('index','JobBazarController@index')->name('admin.information.jobbazar.index');
+            Route::get('create','JobBazarController@create')->name('admin.information.jobbazar.create');
+            Route::post('store','JobBazarController@store')->name('admin.information.jobbazar.store');
+            Route::get('delete/{id}','JobBazarController@delete')->name('admin.information.jobbazar.delete');
+            Route::get('{id}/edit','JobBazarController@edit')->name('admin.information.jobbazar.edit');
+            Route::put('{id}/update','JobBazarController@update')->name('admin.information.jobbazar.update');
+        });
+    });
 
     //Admin Login
     Route::get('/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
@@ -293,6 +315,5 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         alert()->success('Success','Cache Clear Successful');
         return redirect()->route('admin.home');
     })->middleware('auth:admin');
-
 });
 

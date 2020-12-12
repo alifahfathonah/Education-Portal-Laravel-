@@ -66,15 +66,11 @@ class ActivityPanelController extends Controller implements ComponentCRUD
         $panelName->title = $request->title;
         $panelName->status = $request->status;
         $panelName->updated_by = \Auth::id();
-        if ($request->activity){
-            $panelName->activities()->sync($request->activity);
-        }
+        $panelName->activities()->sync($request->activity);
         $panelName->save();
         toast('Panel Name Update Successful...!','success');
         return redirect()->route('admin.activity.panel.index');
     }
-
-
     public function delete($id)
     {
         $activity = ActivityPanel::where('id',$id)->delete();

@@ -11,22 +11,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="407f3d8c-4f46-4f0d-adb9-fca67e672a7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/footer-page/faq.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/footer-page/privacy-policies.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/footer-page/support.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/footer-page/terms.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/higher-study/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/inc/footer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/job-preparation/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdmissionController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/JobBazarController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Admin/Admission.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Admin/JobBazar.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_10_072411_create_admissions_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_12_100417_create_job_bazars_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/information/admission/202012100957eee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/information/job/202012121045123432447_2521430918156145_4250722511902513216_o.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/information/job/202012121045book.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/information/admission/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/information/admission/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/information/admission/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/information/job-bazar/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/information/job-bazar/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/information/job-bazar/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/information/admission.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/information/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/information/internship.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/information/job-bazar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/information/written-viva.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ActivityPanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ActivityPanelController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ComponentCRUD.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ComponentCRUD.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/inc/home-menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/inc/home-menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/information.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/information.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/homeapp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/homeapp.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/innerapp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/innerapp.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/news/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/news/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/profile/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/our_activity/post/Partner_main_1606992529_cse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/inc/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/inc/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/partner/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partner/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/inc/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/inc/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/information.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -185,7 +198,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/uploads/mix" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -198,18 +211,18 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Laravel-Blog-with-Admin-Panel\app\Model\Admin" />
+      <recent name="C:\xampp\htdocs\blogs\app\Http\Controllers\Admin" />
+      <recent name="C:\xampp\htdocs\blogs\app" />
+      <recent name="C:\xampp\htdocs\blogs\app\Model\User" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Laravel-Blog-with-Admin-Panel\public\uploads\mix" />
       <recent name="C:\xampp\htdocs\Laravel-Blog-with-Admin-Panel\public\frontend\asset\images" />
       <recent name="C:\xampp\htdocs\Laravel-Blog-with-Admin-Panel\resources\views\admin\team\team_panel" />
       <recent name="C:\xampp\htdocs\blogs\resources\views\admin\users" />
       <recent name="C:\xampp\htdocs\blogs\resources\views\admin\permission" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Laravel-Blog-with-Admin-Panel\app\Model\Admin" />
-      <recent name="C:\xampp\htdocs\blogs\app\Http\Controllers\Admin" />
-      <recent name="C:\xampp\htdocs\blogs\app" />
-      <recent name="C:\xampp\htdocs\blogs\app\Model\User" />
     </key>
   </component>
   <component name="RunManager">
@@ -312,7 +325,11 @@
       <workItem from="1607144545545" duration="17149000" />
       <workItem from="1607231506935" duration="18059000" />
       <workItem from="1607322104324" duration="14637000" />
-      <workItem from="1607403908353" duration="21480000" />
+      <workItem from="1607403908353" duration="22087000" />
+      <workItem from="1607492431450" duration="4579000" />
+      <workItem from="1607578770180" duration="14517000" />
+      <workItem from="1607603620566" duration="42000" />
+      <workItem from="1607753085981" duration="9354000" />
     </task>
     <servers />
   </component>
@@ -347,26 +364,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1607153460142" />
-    <state x="437" y="165" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607417636519">
+    <state x="437" y="165" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607499877974">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="437" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1607417636519" />
-    <state x="488" y="45" key="#com.intellij.ide.util.MemberChooser" timestamp="1607417904057">
+    <state x="437" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1607499877974" />
+    <state x="488" y="45" key="#com.intellij.ide.util.MemberChooser" timestamp="1607596909897">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="45" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1607417904057" />
+    <state x="488" y="45" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1607596909897" />
     <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606893052826">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606893052826" />
-    <state x="532" y="274" key="Create Controller" timestamp="1607406077095">
+    <state x="532" y="274" key="Create Controller" timestamp="1607596897302">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="532" y="274" key="Create Controller/0.0.1366.728@0.0.1366.728" timestamp="1607406077095" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1607156739615">
+    <state x="532" y="274" key="Create Controller/0.0.1366.728@0.0.1366.728" timestamp="1607596897302" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1607503831928">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1607156739615" />
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1607503831928" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1607153393761">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

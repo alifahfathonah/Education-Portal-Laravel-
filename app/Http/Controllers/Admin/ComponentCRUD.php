@@ -13,8 +13,8 @@ interface ComponentCRUD
     public function store(Request $request);
     //For Edit page view
     public function edit($id);
-    //For Store update Data
+    //For Store updating Data
     public function update($id,Request $request);
-    //For Delete Data
+    //For Deleting Data
     public function delete($id);
 }

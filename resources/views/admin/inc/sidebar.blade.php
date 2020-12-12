@@ -85,6 +85,28 @@
                     </ul>
                 </li>
                 <li>
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#information"
+                       aria-expanded="false" aria-controls="dashboard">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">Information</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse @if($prefix === 'admin/information/admission' || $prefix === 'admin/information/job-bazar') show @endif"  id="information"
+                         data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li class="@if($currentRouteName === 'admin.information.admission.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.information.admission.index')}}">
+                                    <span class="nav-text">Admission</span>
+                                </a>
+                            </li>
+                            <li class="@if($currentRouteName === 'admin.information.jobbazar.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.information.jobbazar.index')}}">
+                                    <span class="nav-text">Job Bazar</span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+                <li>
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#blog"
                        aria-expanded="false" aria-controls="dashboard">
                         <i class="mdi mdi-view-dashboard-outline"></i>

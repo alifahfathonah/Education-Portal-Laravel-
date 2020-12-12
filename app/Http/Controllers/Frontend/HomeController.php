@@ -75,8 +75,14 @@ class HomeController extends Controller
     }
     public function information()
     {
-        return view('frontend.information');
+        return view('frontend.information.index');
     }
+
+    public function admissionInformation()
+    {
+        return view('frontend.information.admission');
+    }
+
     public function softSkill()
     {
         $admin = Admin::all();

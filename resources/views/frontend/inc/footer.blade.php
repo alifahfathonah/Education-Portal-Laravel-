@@ -9,7 +9,7 @@
                 <div class="footer-widget">
                     <h3 class="footer-title">About us</h3>
                     <span class="section__divider"></span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum earum eum, maiores et enim, quae quidem doloremque modi sequi aperiam officiis velit illum perspiciatis tempora natus quibusdam nobis optio amet!</p>
+                    <p>School of Engineers বাংলাদেশের তরুন ইঞ্জিনিয়ার এবং ইঞ্জিনিয়ারিং ছাত্রছাত্রীদের উচ্চশিক্ষা, জব, স্কিল ডেভেলপমেন্ট এবং স্কলারশিপ নিয়ে কাজ করে। আমাদের প্লাটফর্মে যুক্ত আছে দেশের ৭০হাজার ইঞ্জিনিয়ার।</p>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6">
